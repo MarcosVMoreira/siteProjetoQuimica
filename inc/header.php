@@ -1,3 +1,9 @@
+<?php
+    session_start();
+
+?>
+
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -15,7 +21,6 @@
 
         <link href="css/carousel.css" rel="stylesheet">
         <link href="css/estilo.css" rel="stylesheet">
-        <link href="signin.css" rel="stylesheet">
         
     </head>
 
@@ -68,9 +73,26 @@
                     ?>
 
                     </ul>
+                    
+                    <?php
+                        if (!((isset($_SESSION['login_usuario']) && $_SESSION['login_usuario'] != "") &&  
+                        (isset($_SESSION['perfil_usuario']) && $_SESSION['perfil_usuario'] != ""))) {
+                            echo '<form class="form-inline mt-2 mt-md-0">
+                            <a id="btnCriarConta" class="btn btn-outline-primary my-2 my-sm-0" href="login.php">Criar conta</a> 
+                        </form>';    
+                        }                                                                              
+                    ?>
                     <form class="form-inline mt-2 mt-md-0">
-                        <a class="btn btn-outline-success my-2 my-sm-0" href="login.php">Log in</a>
+                        <?php
+                            if ((isset($_SESSION['login_usuario']) && $_SESSION['login_usuario'] != "") &&  
+                            (isset($_SESSION['perfil_usuario']) && $_SESSION['perfil_usuario'] != "")) {
+                                echo '<a class="btn btn-outline-danger my-2 my-sm-0" href="validaLogout.php">Sair</a>';    
+                            } else {
+                                echo '<a class="btn btn-outline-success my-2 my-sm-0" href="login.php">Entrar</a>';                               
+                            }                                                                                  
+                        ?>
                     </form>
                 </div>
             </nav>
         </header>
+        

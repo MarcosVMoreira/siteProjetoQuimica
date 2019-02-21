@@ -1,3 +1,10 @@
+<?php
+    session_start();
+
+    unset($_SESSION['login_usuario'],
+    $_SESSION['perfil_usuario']);
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -18,19 +25,28 @@
 
     </head>
     <body class="text-center">
-        <form class="form-signin">
+		<form action="validaLogin.php" method="POST" id="registration-form" class="form-signin" onsubmit="">
             <img class="mb-4" src="img/logo.jpg" alt="" width="72" height="72">
             <h1 class="h3 mb-3 font-weight-normal">Faça seu login</h1>
             <label for="inputEmail" class="sr-only">Email</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
             <label for="inputPassword" class="sr-only">Senha</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+            <p class="text-center text-danger">
+                <?php
+                    if (isset($_SESSION['loginErro'])) {
+                        echo $_SESSION['loginErro'];
+                        unset ($_SESSION['loginErro']);
+                    }  
+                ?>
+            </p>
             <div class="checkbox mb-3">
                 <label>
                 <input type="checkbox" value="remember-me"> Lembrar-me
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+            
             <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
         </form>
 
@@ -42,4 +58,3 @@
     </body>
 
 </html>
-
