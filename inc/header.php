@@ -69,6 +69,16 @@
                             '<li class="nav-item active">
                             <a class="nav-link" href="#">Cadastrar pergunta<span class="sr-only">(current)</span></a>
                             </li>';
+                        } else if ($pagina == "criarConta") {
+                            echo '<li class="nav-item">
+                            <a class="nav-link" href="index.php">Home</a>
+                            </li>'.
+                            ' <li class="nav-item">
+                            <a class="nav-link" href="jogar.php">Jogar </a>
+                            </li>'.
+                            '<li class="nav-item">
+                            <a class="nav-link" href="cadastrar.php">Cadastrar pergunta<span class="sr-only">(current)</span></a>
+                            </li>';
                         }
                     ?>
 
@@ -78,7 +88,7 @@
                         if (!((isset($_SESSION['login_usuario']) && $_SESSION['login_usuario'] != "") &&  
                         (isset($_SESSION['perfil_usuario']) && $_SESSION['perfil_usuario'] != ""))) {
                             echo '<form class="form-inline mt-2 mt-md-0">
-                            <a id="btnCriarConta" class="btn btn-outline-primary my-2 my-sm-0" href="login.php">Criar conta</a> 
+                            <a id="btnCriarConta" class="btn btn-outline-primary my-2 my-sm-0" href="criarConta.php">Criar conta</a> 
                         </form>';    
                         }                                                                              
                     ?>

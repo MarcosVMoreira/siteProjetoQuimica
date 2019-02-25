@@ -34,8 +34,8 @@
 				<input type="text" class="form-control col-md-6" name="pergunta" id="pergunta" placeholder="Insira a pergunta" required autofocus/>
 			</div>
 			<div class="row">
-				<label for="elemento" class="control-label col-md-2">Elemento resposta:</label>
-				<select name= "elementoSelect" id="elementoSelect">
+				<label for="elemento" class="control-label col-md-2 mt-2">Elemento resposta:</label>
+				<select name= "elementoSelect" id="elementoSelect" class="mt-2">
 					<?php 
 						$sql = mysqli_query($conexao, "SELECT elemento_simbolo FROM elementos");
 						while ($row = $sql->fetch_assoc()){
@@ -48,7 +48,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<button type="submit" class="btn btn-primary">Cadastrar</button>
+					<button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
 				</div>
 			</div>
 		</form>
