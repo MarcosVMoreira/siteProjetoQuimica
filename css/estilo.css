@@ -31,12 +31,20 @@
     
 }
 
-
-
 #padding-top-10 {
     padding-top: 30px;
 }
 
 #btnCriarConta {
     margin-right: 10px;
+}
+
+#btnResponder {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#pergunta {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
