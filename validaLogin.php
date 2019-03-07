@@ -4,7 +4,7 @@
     $login = $_POST['email'];
     $senha = $_POST['password'];
     include_once("conexao.php");
-    $query = "SELECT * FROM usuario WHERE login_usuario='$login' AND senha_usuario= MD5('$senha')";
+    $query = "SELECT * FROM usuario WHERE email_usuario='$login' AND senha_usuario= MD5('$senha')";
     if ($result = $conexao->query($query)) {
         $resultado = $result->fetch_assoc();
         

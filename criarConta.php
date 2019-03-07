@@ -5,7 +5,7 @@
 
 ?>
 
-<div class="container" id="padding-top-10">
+<div class="container" id="padding-top-30">
 	<div class="panel panel-default" id="painel-cadastro">
 		<form action="validaCriarConta.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="return validar(this)">
 			<h3>Criar conta</h3>

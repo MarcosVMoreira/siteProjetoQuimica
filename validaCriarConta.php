@@ -1,32 +1,23 @@
 <?php
-        session_start();
-        
-        include_once("conexao.php");
 
-        $primeiroNome = $_POST["firstName"];
-        $ultimoNome = $_POST["lastName"];
-        
-        $concat = $primeiroNome."_".$ultimoNome;
-        echo $concat;
-        $login = $_POST["login"];
-        $senha = $_POST["senha"];
-        $email = $_POST["email"];
-        
-        $query = "INSERT INTO tabela_usuarios(usu_nome, usu_login, 
-        usu_password, usu_email, usu_nivelAcesso) VALUES ('$concat', '$login', MD5('$senha'), '$email', '0')";
+   session_start();
+   
+   include_once("conexao.php");
+
+   $nome = $_POST["nome"];
+   $email = $_POST["email"];
+   $login = $_POST["login"];
+   $senha = $_POST["senha"];
+   $perfil = "Aluno";
+   
+   $query = "INSERT INTO usuario(nome_usuario, login_usuario, senha_usuario, 
+   perfil_usuario, email_usuario) VALUES ('$nome', '$login', MD5('$senha'), '$perfil', '$email')";
 
 
-        if ($conexao->query($query) === TRUE) {
-           header ("Location: registration_confirm.php");
-           echo ("inseri");
-        } else {
-           echo "Error: " . $query . "<br>" . $conexao->error;
-        }
-
-        
-    ?>
-
-
-    p {
-        background-color: red;
-    }
+   if ($conexao->query($query) === TRUE) {
+      header ("Location: index.php");
+   } else {
+      echo "Error: " . $query . "<br>" . $conexao->error;
+   }
+      
+?>
