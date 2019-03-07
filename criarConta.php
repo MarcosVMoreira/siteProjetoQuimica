@@ -58,25 +58,6 @@
 	</div>
 </div>
 
-<script>
-    function validar(valida_registro) {
-        
-        var senha = valida_registro.senha.value;
-        var confirmaSenha = valida_registro.confirmaSenha.value;
-
-
-        if (senha != confirmaSenha) {
-            alert('Senhas diferentes.');
-            valida_registro.senha.focus();
-            return false;
-        } if (senha.length < 6) {
-            alert('Senha precisa ter no mínimo 6 caracteres.');
-            valida_registro.senha.focus();
-            return false;
-        }
-    }
-
-</script>
 
 <?php
 	include(FOOTER_TEMPLATE); // Inclui o rodapé da página

@@ -20,140 +20,10 @@
 
 <?php
 	} else {
-
-	
 ?>
-
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-	$( function() {
-		var elemento = [
-			"Hidrogênio",
-			"Hélio",
-			"Lítio",
-			"Berílio",
-			"Boro",
-			"Carbono",
-			"Nitrogênio",
-			"Oxigênio",
-			"Flúor",
-			"Neônio",
-			"Sódio",
-			"Magnésio",
-			"Alumínio",
-			"Silício",
-			"Fósforo",
-			"Enxofre",
-			"Cloro",
-			"Argônio",
-			"Potássio",
-			"Cálcio",
-			"Escândio",
-			"Titânio",
-			"Vanádio",
-			"Cromo",
-			"Manganês",
-			"Ferro",
-			"Cobalto",
-			"Níquel",
-			"Cobre",
-			"Zinco",
-			"Gálio",
-			"Germânio",
-			"Arsênio",
-			"Selênio",
-			"Bromo",
-			"Criptônio",
-			"Rubídio",
-			"Estrôncio",
-			"Ítrio",
-			"Zircônio",
-			"Nióbio",
-			"Molibdênio",
-			"Tecnécio",
-			"Rutênio",
-			"Ródio",
-			"Paládio",
-			"Prata",
-			"Cádmio",
-			"Índio",
-			"Estanho",
-			"Antimônio",
-			"Telúrio",
-			"Iodo",
-			"Xenônio",
-			"Césio",
-			"Bário",
-			"Lantânio",
-			"Cério",
-			"Praseodímio",
-			"Neodímio",
-			"Promécio",
-			"Samário",
-			"Európio",
-			"Gadolínio",
-			"Térbio",
-			"Disprósio",
-			"Hólmio",
-			"Érbio",
-			"Túlio",
-			"Itérbio",
-			"Lutécio",
-			"Háfnio",
-			"Tântalo",
-			"Tungstênio",
-			"Rênio",
-			"Ósmio",
-			"Iridio",
-			"Platina",
-			"Ouro",
-			"Mercúrio",
-			"Tálio",
-			"Chumbo",
-			"Bismuto",
-			"Polônio",
-			"Astato",
-			"Radônio",
-			"Frâncio",
-			"Rádio",
-			"Actínio",
-			"Tório",
-			"Protactínio",
-			"Urânio",
-			"Netúnio",
-			"Plutônio",
-			"Amerício",
-			"Cúrio",
-			"Berquélio",
-			"Califórnio",
-			"Einstêinio",
-			"Férmio",
-			"Mendelévio",
-			"Nobélio",
-			"Laurêncio",
-			"Rutherfórdio",
-			"Dúbnio",
-			"Seabórgio",
-			"Bóhrio",
-			"Hássio",
-			"Meitnério",
-			"Darmstácio",
-			"Roentgênio",
-			"Copernício",
-			"Niônio",
-			"Fleróvio",
-			"Moscóvio",
-			"Livermório",
-			"Tenessínio",
-			"Oganessônio"
-		];
-		$( "#elemento" ).autocomplete({
-		source: elemento
-		});
-	} );
-</script>
 
 <div class="container" id="padding-top-30">
 	<div class="panel panel-default" id="painel-cadastro">
@@ -267,24 +137,6 @@
 		</form>
 	</div>
 </div>
-
-
-
-<script>
-	$(function() {
-	var esportes = [
-		"Natação",
-		"Futebol",
-		"Vôlei",
-		"Basquete"
-	];
-	$("#esporte" ).autocomplete({
-		source: esportes
-	});
-	});
-</script>
- 
-
 
 <?php
 	include(FOOTER_TEMPLATE); // Inclui o rodapé da página
