@@ -20,7 +20,20 @@
 
 <?php
 	} else {
+
+		$query = "SELECT MAX(grupo_perguntas) AS max FROM perguntas;";
+		
+		if ($result = $conexao->query($query)) {
+			$resultado = $result->fetch_assoc();
+			if (empty($resultado)) {
+				header("Location: index.php");
+			} else {
+				echo $resultado["max"];
+			}
+		}
+
 ?>
+
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

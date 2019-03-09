@@ -130,7 +130,6 @@ function validar(valida_registro) {
     var senha = valida_registro.senha.value;
     var confirmaSenha = valida_registro.confirmaSenha.value;
 
-
     if (senha != confirmaSenha) {
         alert('Senhas diferentes.');
         valida_registro.senha.focus();
@@ -141,3 +140,51 @@ function validar(valida_registro) {
         return false;
     }
 }
+
+$(document).ready(function() {
+    var qtdDicas = 0;
+
+    $("#dica").click(function() {
+
+        if(qtdDicas < 10) {
+            qtdDicas++;
+            console.log( dica1);
+            switch(qtdDicas) {
+                case 1:
+                    var dica = $("<li class=\"list-group-item\">"+dica1+"</li>");
+                    break;
+                case 2:
+                    var dica = $("<li class=\"list-group-item\">"+dica2+"</li>");
+                    break;
+                case 3:
+                    var dica = $("<li class=\"list-group-item\">"+dica3+"</li>");
+                    break;
+                case 4:
+                    var dica = $("<li class=\"list-group-item\">"+dica4+"</li>");
+                    break;
+                case 5:
+                    var dica = $("<li class=\"list-group-item\">"+dica5+"</li>");
+                    break;
+                case 6:
+                    var dica = $("<li class=\"list-group-item\">"+dica6+"</li>");
+                    break;
+                case 7:
+                    var dica = $("<li class=\"list-group-item\">"+dica7+"</li>");
+                    break;
+                case 8:
+                    var dica = $("<li class=\"list-group-item\">"+dica8+"</li>");
+                    break;
+                case 9:
+                    var dica = $("<li class=\"list-group-item\">"+dica9+"</li>");
+                    break;
+                case 10:
+                    var dica = $("<li class=\"list-group-item\">"+dica10+"</li>");
+                    break;
+              } 
+
+            $("#listaDicas").append(dica);
+        } 
+
+    });
+    $("#dica").click();
+});
