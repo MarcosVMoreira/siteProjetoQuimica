@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 19-Fev-2019 às 23:24
+-- Generation Time: 12-Mar-2019 às 01:33
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.2.14
 
@@ -232,11 +232,38 @@ INSERT INTO `familias` (`familia_Id`, `familia_name`) VALUES
 
 DROP TABLE IF EXISTS `perguntas`;
 CREATE TABLE IF NOT EXISTS `perguntas` (
-  `Id_order_pergunta` int(11) NOT NULL AUTO_INCREMENT,
-  `pergunta` longtext,
-  `resposta` longtext,
-  PRIMARY KEY (`Id_order_pergunta`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `id_perguntas` int(11) NOT NULL AUTO_INCREMENT,
+  `dica_perguntas` longtext NOT NULL,
+  `resposta_perguntas` longtext NOT NULL,
+  `grupo_perguntas` int(11) NOT NULL,
+  PRIMARY KEY (`id_perguntas`)
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `perguntas`
+--
+
+INSERT INTO `perguntas` (`id_perguntas`, `dica_perguntas`, `resposta_perguntas`, `grupo_perguntas`) VALUES
+(5, 'Pergunta tres resposta oxigenio', 'O', 1),
+(2, 'Pergunta um resposta Oxigenio', 'O', 1),
+(3, 'Pergunta teste resposta Helio', 'He', 13),
+(4, 'Pergunta dois resposta oxigenio', 'O', 1),
+(6, 'Pergunta quatro resposta oxigenio', 'O', 1),
+(7, 'Pergunta cinco resposta oxigenio', 'O', 1),
+(8, 'Pergunta seis resposta oxigenio', 'O', 1),
+(9, 'Pergunta sete resposta oxigenio', 'O', 1),
+(10, 'Pergunta oito resposta oxigenio', 'O', 1),
+(11, 'Pergunta nove resposta oxigenio', 'O', 1),
+(12, 'Pergunta dez resposta oxigenio', 'O', 1),
+(13, 'Pergunta dois resposta Helio', 'He', 13),
+(14, 'Pergunta tres resposta Helio', 'He', 13),
+(15, 'Pergunta quatro resposta Helio', 'He', 13),
+(16, 'Pergunta cinco resposta Helio', 'He', 13),
+(17, 'Pergunta seis resposta Helio', 'He', 13),
+(18, 'Pergunta sete resposta Helio', 'He', 13),
+(19, 'Pergunta oito resposta Helio', 'He', 13),
+(20, 'Pergunta nove resposta Helio', 'He', 13),
+(21, 'Pergunta dez resposta Helio', 'He', 13);
 
 -- --------------------------------------------------------
 
@@ -250,8 +277,17 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `login_usuario` varchar(45) NOT NULL,
   `senha_usuario` varchar(45) NOT NULL,
   `perfil_usuario` varchar(45) NOT NULL,
+  `nome_usuario` varchar(45) NOT NULL,
+  `email_usuario` varchar(45) NOT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `login_usuario`, `senha_usuario`, `perfil_usuario`, `nome_usuario`, `email_usuario`) VALUES
+(2, 'teste123', 'aa1bf4646de67fd9086cf6c79007026c', 'Aluno', 'teste123', 'teste123@teste.com');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
