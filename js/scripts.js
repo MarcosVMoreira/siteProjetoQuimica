@@ -141,6 +141,20 @@ function validar(valida_registro) {
     }
 }
 
+function verificaResposta(form) {
+        
+    var campoElemento = form.elemento.value;
+
+    if (campoElemento == elemento) {
+        location.href="jogar.php";
+        return true;
+    } else {
+        alert('Resposta errada.');
+        form.elemento.focus();
+        return false;
+    }
+}
+
 $(document).ready(function() {
     var qtdDicas = 0;
 

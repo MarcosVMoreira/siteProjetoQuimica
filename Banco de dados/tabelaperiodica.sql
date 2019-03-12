@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 12-Mar-2019 às 01:33
--- Versão do servidor: 5.7.24
--- versão do PHP: 7.2.14
+-- Generation Time: 12-Mar-2019 às 22:54
+-- Versão do servidor: 5.7.23
+-- versão do PHP: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,10 +31,10 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `elementos`;
 CREATE TABLE IF NOT EXISTS `elementos` (
   `numero_atomico` int(2) DEFAULT NULL,
-  `elemento_simbolo` char(2) DEFAULT NULL,
-  `elemento_nome` char(20) DEFAULT NULL,
-  `familia` char(20) DEFAULT NULL,
-  `estado_natural` char(20) DEFAULT NULL,
+  `elemento_simbolo` char(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `elemento_nome` char(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `familia` char(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `estado_natural` char(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `massa_atomica` int(20) DEFAULT NULL,
   `periodo` float DEFAULT NULL,
   `grupo` float DEFAULT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `elementos` (
   `distribuicao_camada_5` int(2) DEFAULT NULL,
   `distribuicao_camada_6` int(2) DEFAULT NULL,
   `distribuicao_camada_8` int(2) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `elementos`
@@ -181,9 +181,9 @@ INSERT INTO `elementos` (`numero_atomico`, `elemento_simbolo`, `elemento_nome`, 
 DROP TABLE IF EXISTS `estados`;
 CREATE TABLE IF NOT EXISTS `estados` (
   `estado_Id` int(1) NOT NULL AUTO_INCREMENT,
-  `estado` char(20) DEFAULT NULL,
+  `estado` char(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`estado_Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `estados`
@@ -233,37 +233,37 @@ INSERT INTO `familias` (`familia_Id`, `familia_name`) VALUES
 DROP TABLE IF EXISTS `perguntas`;
 CREATE TABLE IF NOT EXISTS `perguntas` (
   `id_perguntas` int(11) NOT NULL AUTO_INCREMENT,
-  `dica_perguntas` longtext NOT NULL,
-  `resposta_perguntas` longtext NOT NULL,
+  `dica_perguntas` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `resposta_perguntas` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `grupo_perguntas` int(11) NOT NULL,
   PRIMARY KEY (`id_perguntas`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=125 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `perguntas`
 --
 
 INSERT INTO `perguntas` (`id_perguntas`, `dica_perguntas`, `resposta_perguntas`, `grupo_perguntas`) VALUES
-(5, 'Pergunta tres resposta oxigenio', 'O', 1),
-(2, 'Pergunta um resposta Oxigenio', 'O', 1),
-(3, 'Pergunta teste resposta Helio', 'He', 13),
-(4, 'Pergunta dois resposta oxigenio', 'O', 1),
-(6, 'Pergunta quatro resposta oxigenio', 'O', 1),
-(7, 'Pergunta cinco resposta oxigenio', 'O', 1),
-(8, 'Pergunta seis resposta oxigenio', 'O', 1),
-(9, 'Pergunta sete resposta oxigenio', 'O', 1),
-(10, 'Pergunta oito resposta oxigenio', 'O', 1),
-(11, 'Pergunta nove resposta oxigenio', 'O', 1),
-(12, 'Pergunta dez resposta oxigenio', 'O', 1),
-(13, 'Pergunta dois resposta Helio', 'He', 13),
-(14, 'Pergunta tres resposta Helio', 'He', 13),
-(15, 'Pergunta quatro resposta Helio', 'He', 13),
-(16, 'Pergunta cinco resposta Helio', 'He', 13),
-(17, 'Pergunta seis resposta Helio', 'He', 13),
-(18, 'Pergunta sete resposta Helio', 'He', 13),
-(19, 'Pergunta oito resposta Helio', 'He', 13),
-(20, 'Pergunta nove resposta Helio', 'He', 13),
-(21, 'Pergunta dez resposta Helio', 'He', 13);
+(124, 'Pergunta 10 resposta Arsênio', 'Arsênio', 2),
+(123, 'Pergunta 9 resposta Arsênio', 'Arsênio', 2),
+(118, 'Pergunta 4 resposta Arsênio', 'Arsênio', 2),
+(119, 'Pergunta 5 resposta Arsênio', 'Arsênio', 2),
+(120, 'Pergunta 6 resposta Arsênio', 'Arsênio', 2),
+(121, 'Pergunta 7 resposta Arsênio', 'Arsênio', 2),
+(122, 'Pergunta 8 resposta Arsênio', 'Arsênio', 2),
+(117, 'Pergunta 3 resposta Arsênio', 'Arsênio', 2),
+(116, 'Pergunta 2 resposta Arsênio', 'Arsênio', 2),
+(115, 'Pergunta 1 resposta Arsênio', 'Arsênio', 2),
+(114, 'Pergunta 10 resposta argonio', 'Argônio', 1),
+(113, 'Pergunta 9 resposta argonio', 'Argônio', 1),
+(112, 'Pergunta 8 resposta argonio', 'Argônio', 1),
+(111, 'Pergunta 7 resposta argonio', 'Argônio', 1),
+(110, 'Pergunta 6 resposta argonio', 'Argônio', 1),
+(109, 'Pergunta 5 resposta argonio', 'Argônio', 1),
+(108, 'Pergunta 4 resposta argonio', 'Argônio', 1),
+(107, 'Pergunta 3 resposta argonio', 'Argônio', 1),
+(106, 'Pergunta 2 resposta argonio', 'Argônio', 1),
+(105, 'Pergunta 1 resposta argonio', 'Argônio', 1);
 
 -- --------------------------------------------------------
 

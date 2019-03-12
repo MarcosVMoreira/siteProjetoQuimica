@@ -3,15 +3,13 @@
 	include(HEADER_TEMPLATE);  // Inclui o header da página
 	include_once("conexao.php");	// Conecta com o banco de dados
 	
-
-
 	if (!((isset($_SESSION['login_usuario']) && $_SESSION['login_usuario'] != "") &&  
 	(isset($_SESSION['perfil_usuario']) && $_SESSION['perfil_usuario'] != ""))) {
 ?>
 
 <div class="container" id="padding-top-30">
 	<div class="panel panel-default" id="painel-cadastro">
-		<form action="validaPergunta.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="">
+		<form>
             <h3>Entre com sua conta para jogar</h3>
             
 			<div class="row">
@@ -85,14 +83,12 @@
 								$dica10 = $resultado["dica_perguntas"];
 								break;
 						}
-						
+						$elemento = $resultado["resposta_perguntas"];
 						$encontrado = 1;
 					}
 				} 
 			} 
 		}
-	
-
 ?>
 
 <script type="text/javascript">
@@ -106,6 +102,7 @@
 	var dica8 = "<?php echo $dica8 ?>";
 	var dica9 = "<?php echo $dica9 ?>";
 	var dica10 = "<?php echo $dica10 ?>";
+	var elemento = "<?php echo $elemento ?>";
 </script>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -114,7 +111,7 @@
 
 <div class="container" id="padding-top-30">
 	<div class="panel panel-default" id="painel-cadastro">
-		<form action="validaPergunta.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="">
+		<form action="jogar.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="return verificaResposta(this)">
             <h3>Jogar</h3>
 
 			<div class="card-body">

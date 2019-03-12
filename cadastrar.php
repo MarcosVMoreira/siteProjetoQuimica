@@ -9,7 +9,7 @@
 
 <div class="container" id="padding-top-30">
 	<div class="panel panel-default" id="painel-cadastro">
-		<form action="validaPergunta.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="">
+		<form action="validaCadastrar.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="">
 			<h3>Entre com sua conta para cadastrar novas perguntas</h3>
 			<div class="row align-items-center">
 				Para cadastrar novas perguntas, você deve criar sua conta e/ou entrar.
@@ -21,17 +21,6 @@
 <?php
 	} else {
 
-		$query = "SELECT MAX(grupo_perguntas) AS max FROM perguntas;";
-		
-		if ($result = $conexao->query($query)) {
-			$resultado = $result->fetch_assoc();
-			if (empty($resultado)) {
-				header("Location: index.php");
-			} else {
-				echo $resultado["max"];
-			}
-		}
-
 ?>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -40,12 +29,12 @@
 
 <div class="container" id="padding-top-30">
 	<div class="panel panel-default" id="painel-cadastro">
-		<form action="validaPergunta.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="">
+		<form action="validaCadastrar.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="">
 			<h3>Cadastrar dicas</h3>
 
 			<div class="row align-items-center pt-1">
 				<div class="col-md-1">
-					<label for="dica" class="control-label">Elemento resposta:</label>
+					<label for="dica" class="control-label">Elemento:</label>
 				</div>
 				<div class="col-md-4">
 					<input type="text" class="form-control" name="elemento" id="elemento" placeholder="Insira o elemento" required autofocus/>
@@ -57,7 +46,7 @@
 					<label for="dica" class="control-label">Dica 1:</label>
 				</div>
 				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica1" id="dica1" placeholder="Insira a dica" required autofocus/>
+					<input type="text" class="form-control" name="dica1" id="dica1" placeholder="Insira a dica" required/>
 				</div>
 			</div>
 
@@ -66,7 +55,7 @@
 					<label for="dica" class="control-label">Dica 2:</label>
 				</div>
 				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica2" id="dica2" placeholder="Insira a dica" required autofocus/>
+					<input type="text" class="form-control" name="dica2" id="dica2" placeholder="Insira a dica" required/>
 				</div>
 			</div>
 
@@ -75,7 +64,7 @@
 					<label for="dica" class="control-label">Dica 3:</label>
 				</div>
 				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica" required autofocus/>
+					<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica" required/>
 				</div>
 			</div>
 
@@ -84,7 +73,7 @@
 					<label for="dica" class="control-label">Dica 4:</label>
 				</div>
 				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica" required autofocus/>
+					<input type="text" class="form-control" name="dica4" id="dica4" placeholder="Insira a dica" required/>
 				</div>
 			</div>
 
@@ -93,7 +82,7 @@
 					<label for="dica" class="control-label">Dica 5:</label>
 				</div>
 				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica" required autofocus/>
+					<input type="text" class="form-control" name="dica5" id="dica5" placeholder="Insira a dica" required/>
 				</div>
 			</div>
 
@@ -102,7 +91,7 @@
 					<label for="dica" class="control-label">Dica 6:</label>
 				</div>
 				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica" required autofocus/>
+					<input type="text" class="form-control" name="dica6" id="dica6" placeholder="Insira a dica" required/>
 				</div>
 			</div>
 
@@ -111,7 +100,7 @@
 					<label for="dica" class="control-label">Dica 7:</label>
 				</div>
 				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica" required autofocus/>
+					<input type="text" class="form-control" name="dica7" id="dica7" placeholder="Insira a dica" required/>
 				</div>
 			</div>
 
@@ -120,7 +109,7 @@
 					<label for="dica" class="control-label">Dica 8:</label>
 				</div>
 				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica" required autofocus/>
+					<input type="text" class="form-control" name="dica8" id="dica8" placeholder="Insira a dica" required/>
 				</div>
 			</div>
 
@@ -129,7 +118,7 @@
 					<label for="dica" class="control-label">Dica 9:</label>
 				</div>
 				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica" required autofocus/>
+					<input type="text" class="form-control" name="dica9" id="dica9" placeholder="Insira a dica" required/>
 				</div>
 			</div>
 
@@ -138,7 +127,7 @@
 					<label for="dica" class="control-label">Dica 10:</label>
 				</div>
 				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica" required autofocus/>
+					<input type="text" class="form-control" name="dica10" id="dica10" placeholder="Insira a dica" required/>
 				</div>
 			</div>
 
