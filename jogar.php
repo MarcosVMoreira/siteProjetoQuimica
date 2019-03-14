@@ -108,6 +108,8 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet/less" type="text/css" href="styles.less" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 
 <div class="container" id="padding-top-30">
 	<div class="panel panel-default" id="painel-cadastro">
@@ -127,8 +129,32 @@
 					<input type="text" class="form-control" name="elemento" id="elemento" placeholder="Insira o elemento resposta" required autofocus/>
 					<button type="submit" id="btnResponder" class="btn btn-success">Responder</button>				
 				</div>
-				<div class="col-md-5">
+				<div class="col-md-2">
 					<button type="button" class="btn btn-primary" id="dica">Pedir nova dica</button>
+				</div>
+				<div class="col-md-3">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Consultar tabela periódica</button>
+				</div>
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Tabela periódica</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<?php
+								include("tabelaPeriodica.html");
+							?>
+							
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+						</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</form>
