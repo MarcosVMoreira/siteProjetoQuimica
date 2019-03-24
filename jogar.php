@@ -111,48 +111,63 @@
 <link rel="stylesheet/less" type="text/css" href="styles.less" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 
-<div class="container" id="padding-top-30">
-	<div class="panel panel-default" id="painel-cadastro">
+<div class="container-fluid">
+	<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 		<form action="jogar.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="return verificaResposta(this)">
-            <h3>Jogar</h3>
-
-			<div class="card-body">
-				<ul class="list-group" id="listaDicas">
-				</ul>
-            </div>
+			<div class="card mt-5">
+				<div class="card-header">
+					Jogar
+				</div>
+				<div class="card-body">
+					<div class="row align-items-center">
+						<div class="col-sm-12 col-md-12">
+							<div class="form-group">
+								<ul class="list-group" id="listaDicas">
+								</ul>
+							</div>
+						</div>
+					</div>
             
-			<div class="row align-items-center">
-				<div class="col-md-1">
-					<label for="pergunta" class="control-label">Resposta:</label>
+				<div class="row align-items-center">
+					<div class="col-sm-2 col-md-1">
+						<label for="pergunta" class="control-label">Resposta:</label>
+					</div>
 				</div>
-				<div class="input-group col-md-6">
-					<input type="text" class="form-control" name="elemento" id="elemento" placeholder="Insira o elemento resposta" required autofocus/>
-					<button type="submit" id="btnResponder" class="btn btn-success">Responder</button>				
-				</div>
-				<div class="col-md-2">
-					<button type="button" class="btn btn-primary" id="dica">Pedir nova dica</button>
-				</div>
-				<div class="col-md-3">
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Consultar tabela periódica</button>
-				</div>
-				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-lg" role="document">
-						<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">Tabela periódica</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-							</button>
+				<div class="row align-items-center">
+					<div class="col-sm-12 col-md-6">
+						<div class="input-group">
+							<input type="text" class="form-control" name="elemento" id="elemento" placeholder="Insira o elemento resposta" required autofocus/>
+							<button type="submit" id="btnResponder" class="btn btn-success">Responder</button>
 						</div>
-						<div class="modal-body">
-							<?php
-								include("tabelaPeriodica.html");
-							?>
-							
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-						</div>
+					</div>
+
+					<div class="col-12 col-md-2">
+						<button type="button" class="btn btn-primary btn-block" id="dica">Pedir nova dica</button>
+					</div>
+
+					<div class="col-12 col-md-3">
+						<button type="button" id="btnConsultar" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Consultar tabela periódica</button>
+					</div>
+					
+					<div class="modal fade centered-modal" id="exampleModal" role="dialog" aria-hidden="true">
+						<div class="modal-dialog modal-lg" role="document">
+							<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Tabela periódica</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<?php
+									include("tabelaPeriodica.html");
+								?>
+								
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+							</div>
+							</div>
 						</div>
 					</div>
 				</div>

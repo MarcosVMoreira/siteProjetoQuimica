@@ -23,117 +23,118 @@
 
 ?>
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/cadastrar.js"></script>
 
-<div class="container" id="padding-top-30">
-	<div class="panel panel-default" id="painel-cadastro">
+
+<div class="container-fluid">
+	<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 		<form action="validaCadastrar.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="">
-			<h3>Cadastrar dicas</h3>
+			<div class="card mt-5">
+				<div class="card-header">
+					Cadastrar pergunta
+				</div>
+				<div class="card-body">
+					<div class="row align-items-center">
+						<div class="col-sm-12 col-md-6">
+							<div class="form-group">
+								<label for="dica" class="control-label">Elemento:</label>
+								<input type="text" class="form-control" name="elemento" id="elemento" placeholder="Insira o elemento" required autofocus/>
+							</div>
+						</div>
+					</div>
 
-			<div class="row align-items-center pt-1">
-				<div class="col-md-1">
-					<label for="dica" class="control-label">Elemento:</label>
-				</div>
-				<div class="col-md-4">
-					<input type="text" class="form-control" name="elemento" id="elemento" placeholder="Insira o elemento" required autofocus/>
-				</div>
-			</div>
+					<div class="row align-items-center">
+						<div class="col-sm-12 col-md-6">
+							<div class="form-group">
+								<label for="dica" class="control-label">Dica 1:</label>
+								<input type="text" class="form-control" name="dica1" id="dica1" placeholder="Insira a dica" required/>
+							</div>
+						</div>
 
-			<div class="row align-items-center pt-1">
-				<div class="col-md-1">
-					<label for="dica" class="control-label">Dica 1:</label>
-				</div>
-				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica1" id="dica1" placeholder="Insira a dica" required/>
-				</div>
-			</div>
+						<div class="col-sm-12 col-md-6">
+							<div class="form-group">
+								<label for="dica" class="control-label">Dica 2:</label>
+								<input type="text" class="form-control" name="dica2" id="dica2" placeholder="Insira a dica" required/>
+							</div>
+						</div>
+					</div>
 
-			<div class="row align-items-center pt-1">
-				<div class="col-md-1">
-					<label for="dica" class="control-label">Dica 2:</label>
-				</div>
-				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica2" id="dica2" placeholder="Insira a dica" required/>
-				</div>
-			</div>
+					<div class="row align-items-center">
+						<div class="col-sm-12 col-md-6">
+							<div class="form-group">
+								<label for="dica" class="control-label">Dica 3:</label>
+								<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica" required/>
+							</div>
+						</div>
 
-			<div class="row align-items-center pt-1">
-				<div class="col-md-1">
-					<label for="dica" class="control-label">Dica 3:</label>
-				</div>
-				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica" required/>
-				</div>
-			</div>
+						<div class="col-sm-12 col-md-6">
+							<div class="form-group">
+								<label for="dica" class="control-label">Dica 4:</label>
+								<input type="text" class="form-control" name="dica4" id="dica4" placeholder="Insira a dica" required/>
+							</div>
+						</div>
+					</div>
 
-			<div class="row align-items-center pt-1">
-				<div class="col-md-1">
-					<label for="dica" class="control-label">Dica 4:</label>
-				</div>
-				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica4" id="dica4" placeholder="Insira a dica" required/>
-				</div>
-			</div>
+					<div class="row align-items-center">
+						<div class="col-sm-12 col-md-6">
+							<div class="form-group">
+								<label for="dica" class="control-label">Dica 5:</label>
+								<input type="text" class="form-control" name="dica5" id="dica5" placeholder="Insira a dica" required/>
+							</div>
+						</div>
 
-			<div class="row align-items-center pt-1">
-				<div class="col-md-1">
-					<label for="dica" class="control-label">Dica 5:</label>
-				</div>
-				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica5" id="dica5" placeholder="Insira a dica" required/>
-				</div>
-			</div>
+						<div class="col-sm-12 col-md-6">
+							<div class="form-group">
+								<label for="dica" class="control-label">Dica 6:</label>
+								<input type="text" class="form-control" name="dica6" id="dica6" placeholder="Insira a dica" required/>
+							</div>
+						</div>
+					</div>
 
-			<div class="row align-items-center pt-1">
-				<div class="col-md-1">
-					<label for="dica" class="control-label">Dica 6:</label>
-				</div>
-				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica6" id="dica6" placeholder="Insira a dica" required/>
-				</div>
-			</div>
 
-			<div class="row align-items-center pt-1">
-				<div class="col-md-1">
-					<label for="dica" class="control-label">Dica 7:</label>
-				</div>
-				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica7" id="dica7" placeholder="Insira a dica" required/>
-				</div>
-			</div>
+					<div class="row align-items-center">
+						<div class="col-sm-12 col-md-6">
+							<div class="form-group">
+								<label for="dica" class="control-label">Dica 7:</label>
+								<input type="text" class="form-control" name="dica7" id="dica7" placeholder="Insira a dica" required/>
+							</div>
+						</div>
 
-			<div class="row align-items-center pt-1">
-				<div class="col-md-1">
-					<label for="dica" class="control-label">Dica 8:</label>
-				</div>
-				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica8" id="dica8" placeholder="Insira a dica" required/>
-				</div>
-			</div>
+						<div class="col-sm-12 col-md-6">
+							<div class="form-group">
+								<label for="dica" class="control-label">Dica 8:</label>
+								<input type="text" class="form-control" name="dica8" id="dica8" placeholder="Insira a dica" required/>
+							</div>
+						</div>
+					</div>
 
-			<div class="row align-items-center pt-1">
-				<div class="col-md-1">
-					<label for="dica" class="control-label">Dica 9:</label>
-				</div>
-				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica9" id="dica9" placeholder="Insira a dica" required/>
-				</div>
-			</div>
 
-			<div class="row align-items-center pt-1">
-				<div class="col-md-1">
-					<label for="dica" class="control-label">Dica 10:</label>
-				</div>
-				<div class="col-md-6">
-					<input type="text" class="form-control" name="dica10" id="dica10" placeholder="Insira a dica" required/>
-				</div>
-			</div>
 
-			<div class="row">
-				<div class="col-md-3">
-					<button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
+					<div class="row align-items-center">
+						<div class="col-sm-12 col-md-6">
+							<div class="form-group">
+								<label for="dica" class="control-label">Dica 9:</label>
+								<input type="text" class="form-control" name="dica9" id="dica9" placeholder="Insira a dica" required/>
+							</div>
+						</div>
+
+						<div class="col-sm-12 col-md-6">
+							<div class="form-group">
+								<label for="dica" class="control-label">Dica 10:</label>
+								<input type="text" class="form-control" name="dica10" id="dica10" placeholder="Insira a dica" required/>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-2">
+							<button type="submit" class="btn btn-success mt-2 btn-block">Cadastrar</button>
+						</div>
+
+						<div class="col-md-2">
+							<button type="button" id="btnImportar" class="btn btn-primary mt-2 btn-block">Importar dicas</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</form>

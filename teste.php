@@ -1,20 +1,27 @@
-<?php
-	include_once("conexao.php");
 
-	$row = 1;
-	if (($handle = fopen("excel/teste.csv", "r")) !== FALSE) {
-		while (($data = fgetcsv($handle, 1000, "\n")) !== FALSE) {
-			$num = count($data);
-			$row++;
-			for ($c=0; $c < $num; $c++) {
-				if ($row < 14) {
-					echo "<p> $num fields in line $row: <br /></p>\n";
-					echo $data[$c] . "<br />\n";
-					//pego os dados e salvo no banco
-				}
-			}
-			
-		}
-		fclose($handle);
-	}
-?>
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+
+        <script
+			  src="http://code.jquery.com/jquery-3.3.1.js"
+			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			  crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <script src="js/cadastrar.js"></script>
+
+        <title>Site</title>
+
+    </head>
+
+    <body>
+
+		<button type="button" id="btnImportar">Importar dicas</button>
+	</body>
+</html>

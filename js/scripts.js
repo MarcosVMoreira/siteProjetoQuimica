@@ -162,7 +162,6 @@ $(document).ready(function() {
 
         if(qtdDicas < 10) {
             qtdDicas++;
-            console.log( dica1);
             switch(qtdDicas) {
                 case 1:
                     var dica = $("<li class=\"list-group-item\">"+dica1+"</li>");
