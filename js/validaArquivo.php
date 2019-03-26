@@ -1,6 +1,5 @@
 <?php 
 
-    echo "echo dentro do php";
-    
+    echo "com echo dentro do php"; 
 
 ?>
