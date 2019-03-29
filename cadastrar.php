@@ -36,7 +36,7 @@
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Elemento:</label>
-								<input type="text" class="form-control" name="elemento" id="elemento" placeholder="Insira o elemento" required autofocus/>
+								<input type="text" class="form-control" name="elemento" id="elemento" placeholder="Insira o elemento" autofocus/>
 							</div>
 						</div>
 					</div>
@@ -45,14 +45,14 @@
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Dica 1:</label>
-								<input type="text" class="form-control" name="dica1" id="dica1" placeholder="Insira a dica" required/>
+								<input type="text" class="form-control" name="dica1" id="dica1" placeholder="Insira a dica"/>
 							</div>
 						</div>
 
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Dica 2:</label>
-								<input type="text" class="form-control" name="dica2" id="dica2" placeholder="Insira a dica" required/>
+								<input type="text" class="form-control" name="dica2" id="dica2" placeholder="Insira a dica"/>
 							</div>
 						</div>
 					</div>
@@ -61,14 +61,14 @@
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Dica 3:</label>
-								<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica" required/>
+								<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica"/>
 							</div>
 						</div>
 
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Dica 4:</label>
-								<input type="text" class="form-control" name="dica4" id="dica4" placeholder="Insira a dica" required/>
+								<input type="text" class="form-control" name="dica4" id="dica4" placeholder="Insira a dica"/>
 							</div>
 						</div>
 					</div>
@@ -77,14 +77,14 @@
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Dica 5:</label>
-								<input type="text" class="form-control" name="dica5" id="dica5" placeholder="Insira a dica" required/>
+								<input type="text" class="form-control" name="dica5" id="dica5" placeholder="Insira a dica"/>
 							</div>
 						</div>
 
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Dica 6:</label>
-								<input type="text" class="form-control" name="dica6" id="dica6" placeholder="Insira a dica" required/>
+								<input type="text" class="form-control" name="dica6" id="dica6" placeholder="Insira a dica"/>
 							</div>
 						</div>
 					</div>
@@ -94,14 +94,14 @@
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Dica 7:</label>
-								<input type="text" class="form-control" name="dica7" id="dica7" placeholder="Insira a dica" required/>
+								<input type="text" class="form-control" name="dica7" id="dica7" placeholder="Insira a dica"/>
 							</div>
 						</div>
 
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Dica 8:</label>
-								<input type="text" class="form-control" name="dica8" id="dica8" placeholder="Insira a dica" required/>
+								<input type="text" class="form-control" name="dica8" id="dica8" placeholder="Insira a dica"/>
 							</div>
 						</div>
 					</div>
@@ -112,27 +112,28 @@
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Dica 9:</label>
-								<input type="text" class="form-control" name="dica9" id="dica9" placeholder="Insira a dica" required/>
+								<input type="text" class="form-control" name="dica9" id="dica9" placeholder="Insira a dica"/>
 							</div>
 						</div>
 
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Dica 10:</label>
-								<input type="text" class="form-control" name="dica10" id="dica10" placeholder="Insira a dica" required/>
+								<input type="text" class="form-control" name="dica10" id="dica10" placeholder="Insira a dica"/>
 							</div>
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row align-items-center">
 						<div class="col-md-2">
 							<button type="submit" class="btn btn-success mt-2 btn-block">Cadastrar</button>
 						</div>
-
 						<div class="col-md-2">
-							<button type="button" id="btnImportar" class="btn btn-primary mt-2 btn-block">Importar dicas</button>
+							<label class="btn btn-primary mt-2 btn-block" for='selecao-arquivo' id="fileLabel">Importar dados</label>
+							<input id='selecao-arquivo' type='file'>
 						</div>
 					</div>
+					
 				</div>
 			</div>
 		</form>

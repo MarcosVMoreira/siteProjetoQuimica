@@ -1,10 +1,10 @@
 // nesse link fala como trabalhar com import de arquivo com ajax: https://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 // https://www.devmedia.com.br/criando-um-cadastro-com-php-ajax-e-jquery/28046
 
-$('#btnImportar').on('click', function() {
+/*$('#btnImportar').on('click', function() {
 
     var request = $.ajax({
-        url: "js/validaArquivo.php",
+        url: "validaArquivo.php",
         cache: false
     });
 
@@ -16,30 +16,21 @@ $('#btnImportar').on('click', function() {
         console.log("texto: "+jqXHR);
         alert("Falha ao cadastrar produto: " + textStatus);
     });
-});
+});*/
 
-// Variable to store your files
+// AJAX PARA SUBMETER O ARQUIVO INSERIDO NO INPUT PARA O PHP
+
 var files;
 
-// Add events
-$('input[type=file]').on('change', prepareUpload);
+$('#selecao-arquivo').on('change', prepareUpload);
 
-// Grab the files and set them to our variable
 function prepareUpload(event)
 {
     files = event.target.files;
-    uploadFiles();
-}
 
-function uploadFiles(event)
-{
+    event.stopPropagation();
+    event.preventDefault();
 
-    event.stopPropagation(); // Stop stuff happening
-    event.preventDefault(); // Totally stop stuff happening
-
-    // START A LOADING SPINNER HERE
-
-    // Create a formdata object and add the files
     var data = new FormData();
     $.each(files, function(key, value)
     {
@@ -47,31 +38,43 @@ function uploadFiles(event)
     });
 
     $.ajax({
-        url: 'js/validaArquivo.php?files',
+        url: 'validaArquivo.php?files',
         type: 'POST',
         data: data,
-        cache: false,
         dataType: 'json',
-        processData: false, // Don't process the files
-        contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+        processData: false, 
+        contentType: false,
         success: function(data, textStatus, jqXHR)
         {
             if(typeof data.error === 'undefined')
             {
-                // Success so call function to process the form
-                submitForm(event, data);
+                // Sucesso
+
+                $("#dica1").val(data.dica1);
+                $("#dica2").val(data.dica2);
+                $("#dica3").val(data.dica3);
+                $("#dica4").val(data.dica4);
+                $("#dica5").val(data.dica5);
+                $("#dica6").val(data.dica6);
+                $("#dica7").val(data.dica7);
+                $("#dica8").val(data.dica8);
+                $("#dica9").val(data.dica9);
+                $("#dica10").val(data.dica10);
+                $("#elemento").val(data.elemento);
+
+                console.log("retornou "+data.dica2);
             }
             else
             {
-                // Handle errors here
+                // Tratar erros
                 console.log('ERRORS: ' + data.error);
             }
         },
         error: function(jqXHR, textStatus, errorThrown)
         {
-            // Handle errors here
+            // Tratar erros
             console.log('ERRORS: ' + textStatus);
-            // STOP LOADING SPINNER
         }
     });
+    
 }
