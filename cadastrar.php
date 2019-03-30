@@ -23,7 +23,6 @@
 
 ?>
 
-
 <div class="container-fluid">
 	<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 		<form action="validaCadastrar.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="">

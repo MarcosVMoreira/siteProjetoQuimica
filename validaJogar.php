@@ -19,12 +19,9 @@
             }
         }
 
-
         $resposta = $_POST['elemento'];
 
         echo $resposta;
-
-
 
             if (!$conexao->query($query) === TRUE) {
                 echo "Error: " . $query . "<br>" . $conexao->error;
