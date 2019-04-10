@@ -1,3 +1,89 @@
+// funcoes js
+
+
+function validar(valida_registro) {
+        
+    var senha = valida_registro.senha.value;
+    var confirmaSenha = valida_registro.confirmaSenha.value;
+
+    if (senha != confirmaSenha) {
+        alert('Senhas diferentes.');
+        valida_registro.senha.focus();
+        return false;
+    } if (senha.length < 6) {
+        alert('Senha precisa ter no mínimo 6 caracteres.');
+        valida_registro.senha.focus();
+        return false;
+    }
+}
+
+function verificaResposta(form) {
+        
+    var campoElemento = form.elemento.value;
+
+    //console.log(elemento+" oi ");
+
+    if (campoElemento == elemento) {
+        alert("Resposta certa. (melhorar esta mensagem)");
+        location.href="jogar.php";
+        return true;
+    } else {
+        alert("Resposta errada. (melhorar esta mensagem)");
+        form.elemento.focus();
+        return false;
+    }
+}
+
+function populaModalperguntas (grupo) {
+
+
+    console.log(grupo);
+/*
+    $.ajax({
+        url: 'buscaPerguntas.php?grupo',
+        type: 'POST',
+        data: data,
+        processData: false, 
+        contentType: false,
+        success: function(data, textStatus, jqXHR)
+        {
+            if(typeof data.error === 'undefined')
+            {
+                // Sucesso
+                $("#dica1").val(data.dica1);
+                $("#dica2").val(data.dica2);
+                $("#dica3").val(data.dica3);
+                $("#dica4").val(data.dica4);
+                $("#dica5").val(data.dica5);
+                $("#dica6").val(data.dica6);
+                $("#dica7").val(data.dica7);
+                $("#dica8").val(data.dica8);
+                $("#dica9").val(data.dica9);
+                $("#dica10").val(data.dica10);
+                $("#elemento").val(data.elemento);
+
+                //console.log("retornou sucesso: "+data);
+            }
+            else
+            {
+                // Tratar erros
+
+                alert(data.error);
+                //console.log("retornou erro: "+data.error);
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown)
+        {
+            // Tratar erros
+            console.log('ERRORS: ' + textStatus);
+        }
+    });
+/*/
+
+}
+
+//jQuery
+
 $( function() {
     var elemento = [
         "Hidrogênio",
@@ -122,38 +208,8 @@ $( function() {
     $( "#elemento" ).autocomplete({
     source: elemento
     });
+
 } );
-
-
-function validar(valida_registro) {
-        
-    var senha = valida_registro.senha.value;
-    var confirmaSenha = valida_registro.confirmaSenha.value;
-
-    if (senha != confirmaSenha) {
-        alert('Senhas diferentes.');
-        valida_registro.senha.focus();
-        return false;
-    } if (senha.length < 6) {
-        alert('Senha precisa ter no mínimo 6 caracteres.');
-        valida_registro.senha.focus();
-        return false;
-    }
-}
-
-function verificaResposta(form) {
-        
-    var campoElemento = form.elemento.value;
-
-    if (campoElemento == elemento) {
-        location.href="jogar.php";
-        return true;
-    } else {
-        alert('Resposta errada.');
-        form.elemento.focus();
-        return false;
-    }
-}
 
 $(document).ready(function() {
     var qtdDicas = 0;
@@ -201,3 +257,4 @@ $(document).ready(function() {
     });
     $("#dica").click();
 });
+
