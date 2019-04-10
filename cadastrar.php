@@ -127,6 +127,16 @@
 						</div>
 					</div>
 
+					
+					<div class="row align-items-center">
+						<div class="col-sm-12 col-md-6">
+							<div class="form-group">
+								<label for="dica" class="control-label">Referência bibliográfica:</label>
+								<input type="text" class="form-control" name="referencia" id="referencia" placeholder="Insira a referência"/>
+							</div>
+						</div>
+					</div>
+
 					<div class="row align-items-center">
 						<div class="col-md-2">
 							<button type="submit" class="btn btn-success mt-2 btn-block">Cadastrar</button>
@@ -281,6 +291,15 @@
 								<div class="form-group">
 									<label for="dica" class="control-label">Dica 10:</label>
 									<input type="text" class="form-control" name="dica10Modal" id="dica10Modal" placeholder="Insira a dica"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="row align-items-center">
+							<div class="col-sm-12 col-md-6">
+								<div class="form-group">
+									<label for="dica" class="control-label">Referência bibliográfica:</label>
+									<input type="text" class="form-control" name="referenciaModal" id="referenciaModal" placeholder="Insira a referência"/>
 								</div>
 							</div>
 						</div>
