@@ -22,6 +22,10 @@
 	} else {
 
 ?>
+<!--
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 
 <div class="container-fluid">
 	<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
@@ -35,7 +39,7 @@
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Elemento:</label>
-								<input type="text" class="form-control" name="elemento" id="elemento" placeholder="Insira o elemento" autofocus/>
+								<input type="text" class="form-control" name="elemento" id="elemento" placeholder="Insira o elemento"/>
 							</div>
 						</div>
 					</div>
@@ -44,7 +48,7 @@
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Dica 1:</label>
-								<input type="text" class="form-control" name="dica1" id="dica1" placeholder="Insira a dica"/>
+								<input type="text" class="form-control" name="dica1" id="dica1" placeholder="Insira a dica" autofocus/>
 							</div>
 						</div>
 
@@ -193,7 +197,7 @@
 							<div class="col-sm-12 col-md-6">
 								<div class="form-group">
 									<label for="dica" class="control-label">Elemento:</label>
-									<input type="text" class="form-control" name="elemento" id="elemento2" placeholder="Insira o elemento" disabled/>
+									<input type="text" class="form-control" name="elementoModal" id="elementoModal" placeholder="Insira o elemento" disabled/>
 								</div>
 							</div>
 						</div>
@@ -202,14 +206,14 @@
 							<div class="col-sm-12 col-md-6">
 								<div class="form-group">
 									<label for="dica" class="control-label">Dica 1:</label>
-									<input type="text" class="form-control" name="dica1" id="dica1" placeholder="Insira a dica"/>
+									<input type="text" class="form-control" name="dica1Modal" id="dica1Modal" placeholder="Insira a dica"/>
 								</div>
 							</div>
 
 							<div class="col-sm-12 col-md-6">
 								<div class="form-group">
 									<label for="dica" class="control-label">Dica 2:</label>
-									<input type="text" class="form-control" name="dica2" id="dica2" placeholder="Insira a dica"/>
+									<input type="text" class="form-control" name="dica2Modal" id="dica2Modal" placeholder="Insira a dica"/>
 								</div>
 							</div>
 						</div>
@@ -218,14 +222,14 @@
 							<div class="col-sm-12 col-md-6">
 								<div class="form-group">
 									<label for="dica" class="control-label">Dica 3:</label>
-									<input type="text" class="form-control" name="dica3" id="dica3" placeholder="Insira a dica"/>
+									<input type="text" class="form-control" name="dica3Modal" id="dica3Modal" placeholder="Insira a dica"/>
 								</div>
 							</div>
 
 							<div class="col-sm-12 col-md-6">
 								<div class="form-group">
 									<label for="dica" class="control-label">Dica 4:</label>
-									<input type="text" class="form-control" name="dica4" id="dica4" placeholder="Insira a dica"/>
+									<input type="text" class="form-control" name="dica4Modal" id="dica4Modal" placeholder="Insira a dica"/>
 								</div>
 							</div>
 						</div>
@@ -234,14 +238,14 @@
 							<div class="col-sm-12 col-md-6">
 								<div class="form-group">
 									<label for="dica" class="control-label">Dica 5:</label>
-									<input type="text" class="form-control" name="dica5" id="dica5" placeholder="Insira a dica"/>
+									<input type="text" class="form-control" name="dica5Modal" id="dica5Modal" placeholder="Insira a dica"/>
 								</div>
 							</div>
 
 							<div class="col-sm-12 col-md-6">
 								<div class="form-group">
 									<label for="dica" class="control-label">Dica 6:</label>
-									<input type="text" class="form-control" name="dica6" id="dica6" placeholder="Insira a dica"/>
+									<input type="text" class="form-control" name="dica6Modal" id="dica6Modal" placeholder="Insira a dica"/>
 								</div>
 							</div>
 						</div>
@@ -251,14 +255,14 @@
 							<div class="col-sm-12 col-md-6">
 								<div class="form-group">
 									<label for="dica" class="control-label">Dica 7:</label>
-									<input type="text" class="form-control" name="dica7" id="dica7" placeholder="Insira a dica"/>
+									<input type="text" class="form-control" name="dica7Modal" id="dica7Modal" placeholder="Insira a dica"/>
 								</div>
 							</div>
 
 							<div class="col-sm-12 col-md-6">
 								<div class="form-group">
 									<label for="dica" class="control-label">Dica 8:</label>
-									<input type="text" class="form-control" name="dica8" id="dica8" placeholder="Insira a dica"/>
+									<input type="text" class="form-control" name="dica8Modal" id="dica8Modal" placeholder="Insira a dica"/>
 								</div>
 							</div>
 						</div>
@@ -269,21 +273,24 @@
 							<div class="col-sm-12 col-md-6">
 								<div class="form-group">
 									<label for="dica" class="control-label">Dica 9:</label>
-									<input type="text" class="form-control" name="dica9" id="dica9" placeholder="Insira a dica"/>
+									<input type="text" class="form-control" name="dica9Modal" id="dica9Modal" placeholder="Insira a dica"/>
 								</div>
 							</div>
 
 							<div class="col-sm-12 col-md-6">
 								<div class="form-group">
 									<label for="dica" class="control-label">Dica 10:</label>
-									<input type="text" class="form-control" name="dica10" id="dica10" placeholder="Insira a dica"/>
+									<input type="text" class="form-control" name="dica10Modal" id="dica10Modal" placeholder="Insira a dica"/>
 								</div>
 							</div>
 						</div>
 							
 						</div>
 						<div class="modal-footer">
+							<button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal">Apagar cadastro</button>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
 						</div>
 					</div>
 				</div>

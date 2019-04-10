@@ -38,11 +38,11 @@ function populaModalperguntas (grupo) {
 
 
     console.log(grupo);
-/*
+
     $.ajax({
-        url: 'buscaPerguntas.php?grupo',
-        type: 'POST',
-        data: data,
+        url: 'buscaPerguntas.php?grupoParam='+grupo,
+        type: 'GET',
+        dataType: 'json',
         processData: false, 
         contentType: false,
         success: function(data, textStatus, jqXHR)
@@ -50,17 +50,20 @@ function populaModalperguntas (grupo) {
             if(typeof data.error === 'undefined')
             {
                 // Sucesso
-                $("#dica1").val(data.dica1);
-                $("#dica2").val(data.dica2);
-                $("#dica3").val(data.dica3);
-                $("#dica4").val(data.dica4);
-                $("#dica5").val(data.dica5);
-                $("#dica6").val(data.dica6);
-                $("#dica7").val(data.dica7);
-                $("#dica8").val(data.dica8);
-                $("#dica9").val(data.dica9);
-                $("#dica10").val(data.dica10);
-                $("#elemento").val(data.elemento);
+                console.log("data "+data);
+                console.log("dica1 "+data.dica1);
+                
+                $("#dica1Modal").val(data.dica1);
+                $("#dica2Modal").val(data.dica2);
+                $("#dica3Modal").val(data.dica3);
+                $("#dica4Modal").val(data.dica4);
+                $("#dica5Modal").val(data.dica5);
+                $("#dica6Modal").val(data.dica6);
+                $("#dica7Modal").val(data.dica7);
+                $("#dica8Modal").val(data.dica8);
+                $("#dica9Modal").val(data.dica9);
+                $("#dica10Modal").val(data.dica10);
+                $("#elementoModal").val(data.elemento);
 
                 //console.log("retornou sucesso: "+data);
             }
@@ -78,7 +81,14 @@ function populaModalperguntas (grupo) {
             console.log('ERRORS: ' + textStatus);
         }
     });
-/*/
+
+        /*$.post('buscaPerguntas.php?grupo', { grupoParam: grupo}, 
+            function(returnedData){
+                console.log(returnedData);
+        }).fail(function(){
+            console.log("error");
+        });*/
+
 
 }
 
