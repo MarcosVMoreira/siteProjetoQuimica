@@ -43,12 +43,18 @@
 		$jaUsados = array();
 
 		while ($encontrado == 0) {
+
+			// se ja achei anteriormente esse valor aleatorio gerado,
+			//gero novamente ate encontrar um valor que nao gerei ainda
+			//utilizar lista para armazenar os dados
+
 			$contador++;
 			$aleatorio = rand(0, $max);
 
 			/* o problema:
 			estou fazendo select infinitamente no banco. Nao paro de fazer select, mesmo se paro
 			de achar perguntas validas */
+
 			$query1 = "SELECT * FROM perguntas WHERE grupo_perguntas = ".$aleatorio."";
 	
 			if ($result = $conexao->query($query1)) {
