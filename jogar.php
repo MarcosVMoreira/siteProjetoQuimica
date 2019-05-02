@@ -23,6 +23,11 @@
 
 <?php
 	} else {
+		
+		if (isset($_SESSION['jaRespondidas']) && $_SESSION['jaRespondidas'] != "") {
+			//header("Location: teste.php");
+			//desenvolver aqui a verificação se a pergunta sorteada já foi respondida anteriormente
+		}
 
 		$encontrado = 0;
 
@@ -130,50 +135,52 @@
 						</div>
 					</div>
             
-				<div class="row align-items-center">
-					<div class="col-sm-2 col-md-1">
-						<label for="pergunta" class="control-label">Resposta:</label>
-					</div>
-				</div>
-				<div class="row align-items-center">
-					<div class="col-sm-12 col-md-6">
-						<div class="input-group">
-							<input type="text" class="form-control" name="elemento" id="elemento" placeholder="Insira o elemento resposta" required autofocus/>
-							<button type="submit" id="btnResponder" class="btn btn-success">Responder</button>
-						</div>
-					</div>
+                    <div class="row align-items-center">
+                        <div class="col-sm-2 col-md-1">
+                            <label for="pergunta" class="control-label">Resposta:</label>
+                        </div>
+                    </div>
 
-					<div class="col-12 col-md-2">
-						<button type="button" class="btn btn-primary btn-block" id="dica">Pedir nova dica</button>
-					</div>
+                    <div class="row align-items-center">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="elemento" id="elemento" placeholder="Insira o elemento resposta" required autofocus/>
+                                <button type="submit" id="btnResponder" class="btn btn-success">Responder</button>
+                            </div>
+                        </div>
 
-					<div class="col-12 col-md-3">
-						<button type="button" id="btnConsultar" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Consultar tabela periódica</button>
-					</div>
-					
-					<div class="modal fade centered-modal" id="exampleModal" role="dialog" aria-hidden="true">
-						<div class="modal-dialog modal-lg" role="document">
-							<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Tabela periódica</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body">
-								<?php
-									include("tabelaPeriodica.html");
-								?>
-								
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-							</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+                        <div class="col-12 col-md-2">
+                            <button type="button" class="btn btn-primary btn-block" id="dica">Pedir nova dica</button>
+                        </div>
+
+                        <div class="col-12 col-md-3">
+                            <button type="button" id="btnConsultar" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Consultar tabela periódica</button>
+                        </div>
+
+                        <div class="modal fade centered-modal" id="exampleModal" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Tabela periódica</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <?php
+                                            include("tabelaPeriodica.html");
+                                        ?>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+				    </div>
+			     </div>
+            </div>    
 		</form>
 	</div>
 </div>

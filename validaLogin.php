@@ -15,6 +15,7 @@
             $_SESSION['login_usuario'] = $resultado["login_usuario"];
             $_SESSION['perfil_usuario'] =  $resultado["perfil_usuario"];
             $_SESSION['id_usuario'] =  $resultado["id_usuario"];
+            $_SESSION['jaRespondidas'] = "";
             header("Location: index.php");
         }
     }
