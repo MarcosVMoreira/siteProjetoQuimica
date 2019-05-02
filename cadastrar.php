@@ -32,7 +32,7 @@
 		<form action="validaCadastrar.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="">
 			<div class="card mt-5">
 				<div class="card-header">
-					Cadastrar pergunta
+					Cadastrar dicas
 				</div>
 				<div class="card-body">
 					<div class="row align-items-center">

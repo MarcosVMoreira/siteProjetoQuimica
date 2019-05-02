@@ -21,11 +21,38 @@ function verificaResposta(form) {
         
     var campoElemento = form.elemento.value;
 
-    //console.log(elemento+" oi ");
-
     if (campoElemento == elemento) {
+        console.log("idUsuario "+idUsuario);
+        
+        $.ajax({
+            url: 'adicionaPontuacao.php?idUsuario='+idUsuario,
+            type: 'GET',
+            processData: false, 
+            contentType: false,
+            success: function(data, textStatus, jqXHR)
+            {
+                if(typeof data.error === 'undefined')
+                {
+                    // Sucesso
+                    console.log("Adicionado um ponto ao usuario "+idUsuario);
+                }
+                else
+                {
+                    // Tratar erros
+    
+                    alert("Erro ao adicionar pontos: "+data.error);
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown)
+            {
+                // Tratar erros
+                console.log('ERRORS: ' + textStatus);
+                console.log('ERRORS: ' + jqXHR);
+                console.log('ERRORS: ' + errorThrown);
+            }
+        });    
         alert("Resposta certa. (melhorar esta mensagem)");
-        location.href="jogar.php";
+        //location.href="jogar.php";
         return true;
     } else {
         alert("Resposta errada. (melhorar esta mensagem)");
@@ -81,14 +108,6 @@ function populaModalperguntas (grupo) {
             console.log('ERRORS: ' + textStatus);
         }
     });
-
-        /*$.post('buscaPerguntas.php?grupo', { grupoParam: grupo}, 
-            function(returnedData){
-                console.log(returnedData);
-        }).fail(function(){
-            console.log("error");
-        });*/
-
 
 }
 

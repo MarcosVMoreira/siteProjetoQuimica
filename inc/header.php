@@ -47,6 +47,9 @@
                             </li>'.
                             '<li class="nav-item">
                             <a class="nav-link" href="cadastrar.php">Cadastrar pergunta</a>
+                            </li>'.
+                            ' <li class="nav-item">
+                            <a class="nav-link" href="rank.php">Rank</a>
                             </li>';
                         }else if($pagina == "jogar"){
                             echo '<li class="nav-item">
@@ -57,6 +60,9 @@
                             </li>'.
                             '<li class="nav-item">
                             <a class="nav-link" href="cadastrar.php">Cadastrar pergunta</a>
+                            </li>'.
+                            ' <li class="nav-item">
+                            <a class="nav-link" href="rank.php">Rank</a>
                             </li>';
                         } else if ($pagina == "cadastrar") {
                             echo '<li class="nav-item">
@@ -67,6 +73,9 @@
                             </li>'.
                             '<li class="nav-item active">
                             <a class="nav-link" href="#">Cadastrar pergunta<span class="sr-only">(current)</span></a>
+                            </li>'.
+                            ' <li class="nav-item">
+                            <a class="nav-link" href="rank.php">Rank</a>
                             </li>';
                         } else if ($pagina == "criarConta") {
                             echo '<li class="nav-item">
@@ -77,6 +86,22 @@
                             </li>'.
                             '<li class="nav-item">
                             <a class="nav-link" href="cadastrar.php">Cadastrar pergunta<span class="sr-only">(current)</span></a>
+                            </li>'.
+                            ' <li class="nav-item">
+                            <a class="nav-link" href="rank.php">Rank</a>
+                            </li>';
+                        } else if ($pagina == "rank") {
+                            echo '<li class="nav-item">
+                            <a class="nav-link" href="index.php">Home</a>
+                            </li>'.
+                            ' <li class="nav-item">
+                            <a class="nav-link" href="jogar.php">Jogar </a>
+                            </li>'.
+                            '<li class="nav-item">
+                            <a class="nav-link" href="cadastrar.php">Cadastrar pergunta</a>
+                            </li>'.
+                            ' <li class="nav-item active">
+                            <a class="nav-link" href="rank.php">Rank<span class="sr-only">(current)</span></a>
                             </li>';
                         }
                     ?>

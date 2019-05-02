@@ -4,7 +4,8 @@
 	include_once("conexao.php");	// Conecta com o banco de dados
 	
 	if (!((isset($_SESSION['login_usuario']) && $_SESSION['login_usuario'] != "") &&  
-	(isset($_SESSION['perfil_usuario']) && $_SESSION['perfil_usuario'] != ""))) {
+	(isset($_SESSION['perfil_usuario']) && $_SESSION['perfil_usuario'] != "") && 
+	(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] != ""))) {
 ?>
 
 <div class="container" id="padding-top-30">
@@ -103,6 +104,7 @@
 	var dica9 = "<?php echo $dica9 ?>";
 	var dica10 = "<?php echo $dica10 ?>";
 	var elemento = "<?php echo $elemento ?>";
+	var idUsuario = "<?php echo $_SESSION['id_usuario'] ?>";
 </script>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
