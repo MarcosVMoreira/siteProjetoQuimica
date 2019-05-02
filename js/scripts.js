@@ -92,7 +92,7 @@ function verificaResposta(form) {
 }
 
 function populaModalperguntas (grupo) {
-    console.log(grupo);
+    alert("populando");
 
     $.ajax({
         url: 'buscaPerguntas.php?grupoParam='+grupo,
@@ -107,7 +107,7 @@ function populaModalperguntas (grupo) {
                 // Sucesso
                 console.log("data "+data);
                 console.log("dica1 "+data.dica1);
-                
+
                 $("#dica1Modal").val(data.dica1);
                 $("#dica2Modal").val(data.dica2);
                 $("#dica3Modal").val(data.dica3);
@@ -273,43 +273,49 @@ $(document).ready(function() {
 
     $("#dica").click(function() {
 
-        if(qtdDicas < 10) {
-            qtdDicas++;
-            switch(qtdDicas) {
-                case 1:
-                    var dica = $("<li class=\"list-group-item\">"+dica1+"</li>");
-                    break;
-                case 2:
-                    var dica = $("<li class=\"list-group-item\">"+dica2+"</li>");
-                    break;
-                case 3:
-                    var dica = $("<li class=\"list-group-item\">"+dica3+"</li>");
-                    break;
-                case 4:
-                    var dica = $("<li class=\"list-group-item\">"+dica4+"</li>");
-                    break;
-                case 5:
-                    var dica = $("<li class=\"list-group-item\">"+dica5+"</li>");
-                    break;
-                case 6:
-                    var dica = $("<li class=\"list-group-item\">"+dica6+"</li>");
-                    break;
-                case 7:
-                    var dica = $("<li class=\"list-group-item\">"+dica7+"</li>");
-                    break;
-                case 8:
-                    var dica = $("<li class=\"list-group-item\">"+dica8+"</li>");
-                    break;
-                case 9:
-                    var dica = $("<li class=\"list-group-item\">"+dica9+"</li>");
-                    break;
-                case 10:
-                    var dica = $("<li class=\"list-group-item\">"+dica10+"</li>");
-                    break;
-              } 
-
-            $("#listaDicas").append(dica);
-        } 
+        if (typeof dica1 != 'undefined' && typeof dica2 != 'undefined' && typeof dica3 != 'undefined' && typeof dica4 != 'undefined'
+        && typeof dica10 != 'undefined' && typeof dica5 != 'undefined' && typeof dica6 != 'undefined'
+        && typeof dica7 != 'undefined' && typeof dica8 != 'undefined' && typeof dica9 != 'undefined') {
+            if(qtdDicas < 10) {
+                qtdDicas++;
+                switch(qtdDicas) {
+                    case 1:
+                        var dica = $("<li class=\"list-group-item\">"+dica1+"</li>");
+                        break;
+                    case 2:
+                        var dica = $("<li class=\"list-group-item\">"+dica2+"</li>");
+                        break;
+                    case 3:
+                        var dica = $("<li class=\"list-group-item\">"+dica3+"</li>");
+                        break;
+                    case 4:
+                        var dica = $("<li class=\"list-group-item\">"+dica4+"</li>");
+                        break;
+                    case 5:
+                        var dica = $("<li class=\"list-group-item\">"+dica5+"</li>");
+                        break;
+                    case 6:
+                        var dica = $("<li class=\"list-group-item\">"+dica6+"</li>");
+                        break;
+                    case 7:
+                        var dica = $("<li class=\"list-group-item\">"+dica7+"</li>");
+                        break;
+                    case 8:
+                        var dica = $("<li class=\"list-group-item\">"+dica8+"</li>");
+                        break;
+                    case 9:
+                        var dica = $("<li class=\"list-group-item\">"+dica9+"</li>");
+                        break;
+                    case 10:
+                        var dica = $("<li class=\"list-group-item\">"+dica10+"</li>");
+                        break;
+                  } 
+    
+                $("#listaDicas").append(dica);
+            } 
+        } else {
+            $("#listaDicas").append("Todas as perguntas disponíveis já foram respondidas.");
+        }
 
     });
     $("#dica").click();
