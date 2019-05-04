@@ -21,8 +21,10 @@ function verificaResposta(form) {
         
     var campoElemento = form.elemento.value;
 
+    console.log("adicionando o grupoElemento ".grupoElemento);
+
     $.ajax({
-        url: 'preencheSessionJaRespondidas.php?valor='+campoElemento,
+        url: 'preencheSessionJaRespondidas.php?valor='+grupoElemento,
         type: 'GET',
         processData: false, 
         contentType: false,
@@ -92,8 +94,6 @@ function verificaResposta(form) {
 }
 
 function populaModalperguntas (grupo) {
-    alert("populando");
-
     $.ajax({
         url: 'buscaPerguntas.php?grupoParam='+grupo,
         type: 'GET',
@@ -315,6 +315,10 @@ $(document).ready(function() {
             } 
         } else {
             $("#listaDicas").append("Todas as perguntas disponíveis já foram respondidas.");
+            $("#elemento").prop("disabled", true);
+            $("#btnResponder").prop("disabled", true);
+            $("#dica").prop("disabled", true);
+            $("#btnConsultar").prop("disabled", true);
         }
 
     });

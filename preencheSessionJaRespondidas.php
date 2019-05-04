@@ -4,12 +4,18 @@
     session_start();
     include_once("conexao.php");
 
-    if(isset($_GET['valor']) && isset($_SESSION['jaRespondidas'])) {
-        if ($_SESSION['jaRespondidas'] == "") {
+    //Salva as perguntas uqe ja foram respondidas na sessao
+
+    if(isset($_GET['valor'])) {
+        /*if ($_SESSION['jaRespondidas'] == "") {
 			$_SESSION['jaRespondidas'] = $_GET['valor'];
 		} else {
             $_SESSION['jaRespondidas'] = $_SESSION['jaRespondidas'].",".$_GET['valor'];
-        }
+        }*/
+        
+        $_SESSION['jaRespondidas'][] = $_GET['valor'];
     }
+
+    
 
 ?>

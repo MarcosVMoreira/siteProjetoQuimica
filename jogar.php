@@ -38,42 +38,30 @@
 
 		//busca se realmente a pergunta com grupo gerado no random existe no banco. Se existir, eu pego as dicas dessa pergunta
 		//e insiro nas variáveis de dicas
-		$contador = 0;
-
-		$jaUsados = array();
+		
 
 		while ($encontrado == 0) {
 
+			$aleatorio = rand(0, $max);
+	
+			$perguntaJaRespondida = false;
+	
 			// se ja achei anteriormente esse valor aleatorio gerado,
 			//gero novamente ate encontrar um valor que nao gerei ainda
 			//utilizar lista para armazenar os dados
 
-			$contador++;
-			$aleatorio = rand(0, $max);
-
-			/* o problema:
-			estou fazendo select infinitamente no banco. Nao paro de fazer select, mesmo se paro
-			de achar perguntas validas */
-
-			$query1 = "SELECT * FROM perguntas WHERE grupo_perguntas = ".$aleatorio."";
+			for($indice = 0; $indice < sizeof($_SESSION['jaRespondidas']); $indice++) {
+				if ($_SESSION['jaRespondidas'][$indice] == $aleatorio) {
+					$perguntaJaRespondida = true;
+				}
+			}
 	
-			if ($result = $conexao->query($query1)) {
-				$i = 0;
-				while ($resultado = $result->fetch_assoc()) {
-					$elementoJaRespondido = false;
-					if (isset($_SESSION['jaRespondidas']) && $_SESSION['jaRespondidas'] != "") {
-						//header("Location: teste.php");
-						//desenvolver aqui a verificação se a pergunta sorteada já foi respondida anteriormente
-						$elementos = explode(",", $_SESSION['jaRespondidas']);
-						
-						for($j = 0; $j < sizeof($elementos); $j++) {
-							if ($resultado["resposta_perguntas"] == $elementos[$j]) {
-								$elementoJaRespondido = true;
-							}
-						}
-					}
-					if ($elementoJaRespondido == false) {
-
+			if (!$perguntaJaRespondida) {
+				$query1 = "SELECT * FROM perguntas WHERE grupo_perguntas = ".$aleatorio."";
+	
+				if ($result = $conexao->query($query1)) {
+					$i = 0;
+					while ($resultado = $result->fetch_assoc()) {
 						$i++;
 						if ($resultado["grupo_perguntas"] == 0) {
 							echo "<br>nao tem essa linha com valor ".$aleatorio;
@@ -113,14 +101,17 @@
 							$elemento = $resultado["resposta_perguntas"];
 							$encontrado = 1;
 						}
-					}
-				} 
-			} 
-
-			if ($contador > $max) {
+						
+					} 
+				}
+			}
+	
+			if (sizeof($_SESSION['jaRespondidas']) == $max) {
 				$encontrado = 1;
 			}
+	
 		}
+
 ?>
 
 <script type="text/javascript">
@@ -135,6 +126,7 @@
 	var dica9 = "<?php echo $dica9 ?>";
 	var dica10 = "<?php echo $dica10 ?>";
 	var elemento = "<?php echo $elemento ?>";
+	var grupoElemento = "<?php echo $aleatorio ?>";
 	var idUsuario = "<?php echo $_SESSION['id_usuario'] ?>";
 </script>
 
