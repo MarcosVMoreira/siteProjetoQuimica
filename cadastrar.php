@@ -142,10 +142,12 @@
 							<button type="submit" class="btn btn-success mt-2 btn-block">Cadastrar</button>
 						</div>
 						<div class="col-md-2">
-							<label class="btn btn-primary mt-2 btn-block" for='selecao-arquivo' id="fileLabel">Importar dados</label>
+							<label class="btn btn-primary mt-2 btn-block" for='selecao-arquivo' id="fileLabel">Importar dados*</label>
 							<input id='selecao-arquivo' type='file'>
 						</div>
 					</div>
+					
+					<small>*Para realizar a importação de dados, é necessário seguir o arquivo modelo que pode ser baixado <a href="Modelo.xls">aqui</a>. O arquivo a ser importado deve ter extensão .CSV.</small>
 					
 				</div>
 			</div>
