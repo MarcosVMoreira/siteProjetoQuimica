@@ -172,7 +172,7 @@
                         </div>
 
                         <div class="col-12 col-md-3">
-                            <button type="button" id="btnConsultar" class="btn btn-primary btn-block" data-toggle="modal" data-target="#tallModal">Consultar tabela periódica</button>
+                            <button type="button" id="btnConsultar" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Consultar tabela periódica</button>
                         </div>
 
 
@@ -182,34 +182,35 @@
 						<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
 
 
-						<div id="tallModal" class="modal modal-wide fade">
-							<div class="modal-dialog">
-								<div class="modal-content">
-								<div class="modal-header">
-									<h4 class="modal-title">Tabela periódica</h4>
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-								</div>
-								<div class="modal-body">
-									<?php
-										include("tabelaPeriodica.html");
-									?>
+                        <div class="modal fade centered-modal" id="exampleModal" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Tabela periódica</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <?php
+                                            include("tabelaPeriodica.html");
+                                        ?>
 
-								</div>
-								<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-								</div>
-								</div><!-- /.modal-content -->
-							</div><!-- /.modal-dialog -->
-						</div><!-- /.modal -->
-						
-<!-- https://codepen.io/scottpdawson/pen/byDqv -->
-						
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 						<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
 						<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
 						<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
 						<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
 
-					</div>
+
+				    </div>
 			     </div>
             </div>    
 		</form>

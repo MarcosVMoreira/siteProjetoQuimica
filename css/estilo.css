@@ -89,12 +89,6 @@ input[type='file'] {
 
 /* MODAL PARA TABELA PERIODICA */
 
-
-.modal.modal-wide .modal-dialog {
-    width: 90%;
-  }
-  .modal-wide .modal-body {
-    overflow-y: auto;
-  }
-
-  #tallModal .modal-body p { margin-bottom: 900px }
+.modal-lg {
+    max-width: 80% !important;
+}
