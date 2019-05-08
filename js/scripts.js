@@ -325,8 +325,6 @@ $(document).ready(function() {
     $("#dica").click();
 });
 
-
-
 // when .modal-wide opened, set content-body height based on browser height; 200 is appx height of modal padding, modal title and button bar
 
 $(".modal-wide").on("show.bs.modal", function() {
@@ -338,36 +336,25 @@ $(".modal-wide").on("show.bs.modal", function() {
 $(document).ready(function () {
     var qtdReferencias = 0;
 
-    $("#linhaBotoes").on("click", "#botaoAdicionar", function () {
-        var stringlinha = $("<div class=\"form-row\" id=\"linhaDiaria" + qtdReferencias + "\">" +
-            "<div class=\"col-sm-12 col-md-3\">" +
+    $("#linhaReferencia").on("click", "#adicionaReferencia", function () {
+        if (qtdReferencias < 9) {
+            var stringReferencia = $("<div class=\"row align-items-center\" id=\"linhaNovaReferencia" + qtdReferencias + "\">" +
+            "<div class=\"col-sm-12 col-md-6\">" +
             "<div class=\"form-group\">" +
-            "<label for=\"inputData\">Data</label>" +
-            "<input type=\"date\" class=\"form-control\" name=\"inputData" + qtdReferencias + "\" id=\"inputData" + qtdReferencias + "\" required>" +
-            "</div>" +
-            "</div>" +
-            "<div class=\"col-sm-12 col-md-2\">" +
-            "<div class=\"form-group\">" +
-            "<label for=\"inputCargaHoraria\">Carga Horária</label>" +
-            "<input type=\"time\" class=\"form-control\" name=\"inputCargaHoraria" + qtdLinhas + "\" id=\"inputCargaHoraria" + qtdLinhas + "\" required>" +
-            "</div>" +
-            "</div>" +
-            "<div class=\"col-sm-12 col-md-3\">" +
-            "<div class=\"form-group\">" +
-            "<label for=\"inputSetor\">Setor</label>" +
-            "<input type=\"text\" class=\"form-control\" name=\"inputSetor" + qtdLinhas + "\" id=\"inputSetor" + qtdLinhas + "\" required>" +
-            "</div>" +
-            "</div>" +
-            "<div class=\"col-sm-12 col-md-4\">" +
-            "<div class=\"form-group\">" +
-            "<label for=\"inputAtividade\">Atividade Desenvolvida</label>" +
-            "<input type=\"text\" class=\"form-control\" name=\"inputAtividade" + qtdLinhas + "\" id=\"inputAtividade" + qtdLinhas + "\" required>" +
+            "<div class=\"input-group\">" +
+            "<input type=\"text\" class=\"form-control\" name=\"referencia" + qtdReferencias + "\" id=\"id=\"referencia" + qtdReferencias + "\" placeholder=\"Insira a " + (qtdReferencias+2) + "º referência \" required>" +
             "</div>" +
             "</div>" +
             "</div>");
 
-        $("#novaReferenciaBibliografica").append(stringlinha);
+            $("#novaReferenciaBibliografica").append(stringReferencia);
 
+            qtdReferencias++;
+        }
+    });
 
-        qtdLinhas++;
+    $("#removeReferencia").click(function () {
+        qtdReferencias--;
+        $("#linhaNovaReferencia" + qtdReferencias).remove();
+    });
 });

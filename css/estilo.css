@@ -100,11 +100,25 @@ input[type='file'] {
 #adicionaReferencia {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#removeReferencia {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 #referencia {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
+
+
+#removeReferencia {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
 
 /* FIM cadastrar.php */

@@ -132,15 +132,20 @@
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Referência bibliográfica:</label>
-								<div class="input-group">
+								<div class="input-group" id="linhaReferencia">
 									<input type="text" class="form-control" name="referencia" id="referencia" placeholder="Insira a referência"/>
 									<button type="button" id="adicionaReferencia" class="btn btn-success">+</button>
+									<button type="button" id="removeReferencia" class="btn btn-danger">-</button>
                             	</div>
+								<small id="descReferecias" class="form-text text-muted">
+                                        Caso tenha mais de uma referência bibliográfica, clique no botão + para adicionar novas referências e no - para remover.
+								</small>
 							</div>
 						</div>
 					</div>
-					<div class="row align-items-center" id="novaReferenciaBibliografica">
 					
+					<div id="novaReferenciaBibliografica">
+
 					</div>
 
 					<div class="row align-items-center">
