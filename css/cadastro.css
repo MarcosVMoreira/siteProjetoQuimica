@@ -1,0 +1,34 @@
+/* Esconde o input de arquivo */
+
+input[type='file'] {
+    display: none
+  }
+  
+#fileLabel { 
+    cursor: pointer;
+}
+
+/* deixa cantos dos botões de adicionar e remover referência quadrados */
+
+#adicionaReferencia {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#removeReferencia {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#referencia {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+#removeReferencia {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

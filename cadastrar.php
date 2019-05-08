@@ -7,6 +7,8 @@
 	(isset($_SESSION['perfil_usuario']) && $_SESSION['perfil_usuario'] != ""))) {
 	   ?>
 
+<link href="css/cadastro.css" rel="stylesheet">
+
 <div class="container" id="padding-top-30">
 	<div class="panel panel-default" id="painel-cadastro">
 		<form action="validaCadastrar.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="">
@@ -22,10 +24,7 @@
 	} else {
 
 ?>
-<!--
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+<link href="css/cadastro.css" rel="stylesheet">
 
 <div class="container-fluid">
 	<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">

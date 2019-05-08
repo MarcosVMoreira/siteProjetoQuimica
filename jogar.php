@@ -8,15 +8,14 @@
 	(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] != ""))) {
 ?>
 
+
 <div class="container" id="padding-top-30">
 	<div class="panel panel-default" id="painel-cadastro">
 		<form>
             <h3>Entre com sua conta para jogar</h3>
-            
 			<div class="row">
 				Para utilizar o sistema, você deve criar sua conta e/ou entrar.
 			</div>
-		
 		</form>
 	</div>
 </div>
@@ -135,6 +134,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+<link href="css/jogar.css" rel="stylesheet">
 
 <div class="container-fluid">
 	<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">

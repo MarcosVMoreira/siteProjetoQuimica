@@ -1,0 +1,10 @@
+#btnResponder {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* MODAL PARA TABELA PERIODICA */
+
+.modal-lg {
+    max-width: 80% !important;
+}

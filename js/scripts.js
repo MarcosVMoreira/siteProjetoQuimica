@@ -354,7 +354,9 @@ $(document).ready(function () {
     });
 
     $("#removeReferencia").click(function () {
-        qtdReferencias--;
-        $("#linhaNovaReferencia" + qtdReferencias).remove();
+        if (qtdReferencias > 0) {
+            qtdReferencias--;
+            $("#linhaNovaReferencia" + qtdReferencias).remove();
+        }
     });
 });
