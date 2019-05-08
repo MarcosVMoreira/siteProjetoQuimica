@@ -130,10 +130,10 @@
 	var idUsuario = "<?php echo $_SESSION['id_usuario'] ?>";
 </script>
 
+<link rel="stylesheet/less" type="text/css" href="styles.less" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link rel="stylesheet/less" type="text/css" href="styles.less" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 
 <div class="container-fluid">
@@ -174,48 +174,46 @@
                         <div class="col-12 col-md-3">
                             <button type="button" id="btnConsultar" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Consultar tabela periódica</button>
                         </div>
-
-
-						<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-						<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-						<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-						<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-
-
-                        <div class="modal fade centered-modal" id="exampleModal" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Tabela periódica</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <?php
-                                            include("tabelaPeriodica.html");
-                                        ?>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-						<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-						<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-						<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-						<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-
-
 				    </div>
 			     </div>
             </div>    
 		</form>
 	</div>
 </div>
+
+
+	<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+	<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+	<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+	<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+
+
+	<div class="modal fade centered-modal" id="exampleModal" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Tabela periódica</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<?php
+						include("tabelaPeriodica.html");
+					?>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+	<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+	<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+	<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
 
 <?php
 	include(FOOTER_TEMPLATE); // Inclui o rodapé da página

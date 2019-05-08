@@ -288,8 +288,6 @@
 							</div>
 						</div>
 
-
-
 						<div class="row align-items-center">
 							<div class="col-sm-12 col-md-6">
 								<div class="form-group">
