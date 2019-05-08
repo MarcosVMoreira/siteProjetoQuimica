@@ -333,3 +333,41 @@ $(".modal-wide").on("show.bs.modal", function() {
     var height = $(window).height() - 200;
     $(this).find(".modal-body").css("max-height", height);
   });
+
+
+$(document).ready(function () {
+    var qtdReferencias = 0;
+
+    $("#linhaBotoes").on("click", "#botaoAdicionar", function () {
+        var stringlinha = $("<div class=\"form-row\" id=\"linhaDiaria" + qtdReferencias + "\">" +
+            "<div class=\"col-sm-12 col-md-3\">" +
+            "<div class=\"form-group\">" +
+            "<label for=\"inputData\">Data</label>" +
+            "<input type=\"date\" class=\"form-control\" name=\"inputData" + qtdReferencias + "\" id=\"inputData" + qtdReferencias + "\" required>" +
+            "</div>" +
+            "</div>" +
+            "<div class=\"col-sm-12 col-md-2\">" +
+            "<div class=\"form-group\">" +
+            "<label for=\"inputCargaHoraria\">Carga Horária</label>" +
+            "<input type=\"time\" class=\"form-control\" name=\"inputCargaHoraria" + qtdLinhas + "\" id=\"inputCargaHoraria" + qtdLinhas + "\" required>" +
+            "</div>" +
+            "</div>" +
+            "<div class=\"col-sm-12 col-md-3\">" +
+            "<div class=\"form-group\">" +
+            "<label for=\"inputSetor\">Setor</label>" +
+            "<input type=\"text\" class=\"form-control\" name=\"inputSetor" + qtdLinhas + "\" id=\"inputSetor" + qtdLinhas + "\" required>" +
+            "</div>" +
+            "</div>" +
+            "<div class=\"col-sm-12 col-md-4\">" +
+            "<div class=\"form-group\">" +
+            "<label for=\"inputAtividade\">Atividade Desenvolvida</label>" +
+            "<input type=\"text\" class=\"form-control\" name=\"inputAtividade" + qtdLinhas + "\" id=\"inputAtividade" + qtdLinhas + "\" required>" +
+            "</div>" +
+            "</div>" +
+            "</div>");
+
+        $("#novaReferenciaBibliografica").append(stringlinha);
+
+
+        qtdLinhas++;
+});

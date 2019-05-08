@@ -132,9 +132,15 @@
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Referência bibliográfica:</label>
-								<input type="text" class="form-control" name="referencia" id="referencia" placeholder="Insira a referência"/>
+								<div class="input-group">
+									<input type="text" class="form-control" name="referencia" id="referencia" placeholder="Insira a referência"/>
+									<button type="button" id="adicionaReferencia" class="btn btn-success">+</button>
+                            	</div>
 							</div>
 						</div>
+					</div>
+					<div class="row align-items-center" id="novaReferenciaBibliografica">
+					
 					</div>
 
 					<div class="row align-items-center">

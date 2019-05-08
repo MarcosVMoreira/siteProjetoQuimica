@@ -92,3 +92,19 @@ input[type='file'] {
 .modal-lg {
     max-width: 80% !important;
 }
+
+/* FIM MODAL PARA TABELA PERIODICA */
+
+/* cadastrar.php */
+
+#adicionaReferencia {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#referencia {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* FIM cadastrar.php */
