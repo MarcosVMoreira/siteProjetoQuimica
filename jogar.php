@@ -134,6 +134,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+<script src="js/jogar.js" ></script>
 <link href="css/jogar.css" rel="stylesheet">
 
 <div class="container-fluid">
@@ -201,7 +202,6 @@
 					<?php
 						include("tabelaPeriodica.html");
 					?>
-
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

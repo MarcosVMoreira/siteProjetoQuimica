@@ -46,6 +46,7 @@
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+            <small> Não tem uma conta? <a href="criarConta.php">Cadastre-se</a></small>
             
             <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
         </form>

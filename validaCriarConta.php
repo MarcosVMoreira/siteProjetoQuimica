@@ -11,7 +11,8 @@
    $perfil = "Aluno";
    
    $query = "INSERT INTO usuario(nome_usuario, login_usuario, senha_usuario, 
-   perfil_usuario, email_usuario) VALUES ('$nome', '$login', MD5('$senha'), '$perfil', '$email')";
+   perfil_usuario, email_usuario, pontuacao_usuario) VALUES 
+   ('$nome', '$login', MD5('$senha'), '$perfil', '$email', '0')";
 
 
    if ($conexao->query($query) === TRUE) {

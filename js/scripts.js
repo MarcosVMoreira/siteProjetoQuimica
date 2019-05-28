@@ -21,7 +21,7 @@ function verificaResposta(form) {
         
     var campoElemento = form.elemento.value;
 
-    console.log("adicionando o grupoElemento ".grupoElemento);
+   //console.log("adicionando o grupoElemento "+grupoElemento);
 
     $.ajax({
         url: 'preencheSessionJaRespondidas.php?valor='+grupoElemento,
@@ -39,7 +39,7 @@ function verificaResposta(form) {
             {
                 // Tratar erros
 
-                alert("Erro ao adicionar a session jaRespondidas: "+data.error);
+                console.log("Erro ao adicionar a session jaRespondidas: "+data.error);
             }
         },
         error: function(jqXHR, textStatus, errorThrown)
@@ -79,7 +79,10 @@ function verificaResposta(form) {
                 console.log('ERRORS: ' + jqXHR);
                 console.log('ERRORS: ' + errorThrown);
             }
-        });    
+        });   
+        
+        
+
         alert("Resposta certa. (melhorar esta mensagem)");
         //location.href="jogar.php";
         return true;
@@ -318,7 +321,7 @@ $(document).ready(function() {
             $("#elemento").prop("disabled", true);
             $("#btnResponder").prop("disabled", true);
             $("#dica").prop("disabled", true);
-            $("#btnConsultar").prop("disabled", true);
+            //$("#btnConsultar").prop("disabled", true);
         }
 
     });
