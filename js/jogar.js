@@ -19,7 +19,7 @@ $(document).ready(function() {
                 // Sucesso
 
                 for (const key of Object.keys(data)) {
-                    console.log("iterando na key: "+data[key]);
+                    //console.log("iterando na key: "+data[key]);
                     $("#elemento"+data[key]).css("background-color", "green");
                 }
 
