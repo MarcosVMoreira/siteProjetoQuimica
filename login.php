@@ -4,6 +4,13 @@
     unset($_SESSION['login_usuario'],
     $_SESSION['perfil_usuario'],
     $_SESSION['jaRespondidas']);
+
+    $loginLembrete = (isset($_COOKIE['CookieLogin'])) ? base64_decode($_COOKIE['CookieLogin']) : '';
+    $senhaLembrete = (isset($_COOKIE['CookieSenha'])) ? base64_decode($_COOKIE['CookieSenha']) : '';
+    $lembrete = (isset($_COOKIE['CookieLembrete'])) ? base64_decode($_COOKIE['CookieLembrete']) : '';
+    $checked = ($lembrete == 'remember-me') ? 'checked' : '';
+
+
 ?>
 
 <!doctype html>
@@ -29,9 +36,9 @@
             <img class="mb-4" src="img/logo.jpg" alt="" width="72" height="72">
             <h1 class="h3 mb-3 font-weight-normal">Faça seu login</h1>
             <label for="inputEmail" class="sr-only">Email</label>
-            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+            <input type="email" value="<?=$loginLembrete?>" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
             <label for="inputPassword" class="sr-only">Senha</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+            <input type="password" value="<?=$senhaLembrete?>" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
             <p class="text-center text-danger">
                 <?php
                     if (isset($_SESSION['loginErro'])) {
@@ -42,7 +49,7 @@
             </p>
             <div class="checkbox mb-3">
                 <label>
-                <input type="checkbox" value="remember-me"> Lembrar-me
+                <input type="checkbox" name="lembrete" value="remember-me" <?=$checked?>> Lembrar-me
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
