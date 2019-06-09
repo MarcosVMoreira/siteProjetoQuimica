@@ -35,6 +35,13 @@
 				</div>
 				<div class="card-body">
 					<div class="row align-items-center">
+						<div class="col-md-2">
+							<!-- <label class="btn btn-primary mt-2 btn-block" for='selecao-arquivo' id="fileLabel">Importar dados</label>
+							<input id='selecao-arquivo' type='file'> -->
+							<button type="button" id="btnUpload" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalUpload">Importar dados</button>
+						</div>
+					</div>
+					<div class="row align-items-center">
 						<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dica" class="control-label">Elemento:</label>
@@ -148,12 +155,8 @@
 					</div>
 
 					<div class="row align-items-center">
-						<div class="col-md-2">
-							<button type="submit" class="btn btn-success mt-2 btn-block">Cadastrar</button>
-						</div>
-						<div class="col-md-2">
-							<label class="btn btn-primary mt-2 btn-block" for='selecao-arquivo' id="fileLabel">Importar dados</label>
-							<input id='selecao-arquivo' type='file'>
+						<div class="col-md-2 offset-10">
+							<button type="submit" class="btn btn-success mt-2 btn-block">Salvar</button>
 						</div>
 					</div>
 					
@@ -327,6 +330,56 @@
 			<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
 			<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
 			<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+
+			<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+			<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+			<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+			<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+
+			<div class="modal fade centered-modal" id="modalUpload" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Importação de arquivos</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						
+						<div class="row align-items-center">
+							<div class="col-12">
+								&emsp;Para realizar a importação de dados, você deve enviar um arquivo no modelo em excel exigido pelo sistema. 
+								Tal arquivo deve ser no formato ".csv". 
+								<br>
+								&emsp;Para criar um arquivo ".csv" partindo de um arquivo excel, abra sua tabela, vá em Arquivo>Salvar como>Procurar. 
+								Em Tipo, selecione a opção "CSV UTF-8 (Delimitado por vígulas) (*.csv)".
+							</div>
+						</div>
+
+						<div class="row align-items-center pt-4 pb-3">
+							<div class="col-3">
+								<a href="excel/modelo.xls"><button type="button" class="btn btn-primary btn-block" id="baixarModelo">Baixar modelo</button></a>
+							</div>
+							<div class="col-5">
+								<label class="btn btn-primary mt-2 btn-block" for='selecao-arquivo' id="fileLabel">Importar meu arquivo .csv</label>
+								<input id='selecao-arquivo' type='file'>
+							</div>
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-success" data-dismiss="modal">Finalizar importação</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+			<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+			<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+			<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+
 
 
 		</form>
