@@ -353,7 +353,7 @@
 								Tal arquivo deve ser no formato ".csv". 
 								<br>
 								&emsp;Para criar um arquivo ".csv" partindo de um arquivo excel, abra sua tabela, vá em Arquivo>Salvar como>Procurar. 
-								Em Tipo, selecione a opção "CSV UTF-8 (Delimitado por vígulas) (*.csv)".
+								Em "Tipo", selecione a opção "CSV UTF-8 (Delimitado por vígulas) (*.csv)" e clique em "Salvar".
 							</div>
 						</div>
 
