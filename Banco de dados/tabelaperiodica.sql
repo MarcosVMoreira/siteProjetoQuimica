@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 04-Maio-2019 às 20:29
+-- Generation Time: 27-Ago-2019 às 14:23
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.2.14
 
@@ -289,7 +289,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `login_usuario`, `senha_usuario`, `perfil_usuario`, `nome_usuario`, `email_usuario`, `pontuacao_usuario`, `jaRespondidas_usuario`) VALUES
-(2, 'teste123', 'aa1bf4646de67fd9086cf6c79007026c', 'Aluno', 'teste123', 'teste123@teste.com', 35, NULL),
+(2, 'teste123', 'aa1bf4646de67fd9086cf6c79007026c', 'Aluno', 'teste123', 'teste123@teste.com', 42, NULL),
 (3, 'joao', 'aa1bf4646de67fd9086cf6c79007026c', 'Aluno', 'Joao', 'joao@gmail.com', 4, NULL),
 (4, 'maria', 'aa1bf4646de67fd9086cf6c79007026c', 'Aluno', 'Maria', 'maria@gmail.com', 1, NULL);
 COMMIT;
