@@ -5,6 +5,8 @@
     
 ?>
 
+<link href="css/rank.css" rel="stylesheet">
+
 <div class="container-fluid">
 	<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 		<form action="validaCadastrar.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="">
@@ -31,26 +33,11 @@
                             <tbody class="labeltexto">'; 
                             while ($linha = $result->fetch_assoc()) { 
                                 if ($linha['perfil_usuario'] == "Aluno") { 
-                                    if ($contador == 1) {
-                                        echo '<tr scope="row">'; 
-                                        echo '<td>'.$contador++.'º <i class="fas fa-trophy"></i></td> '; 
-                                        echo '<td>'.$linha['nome_usuario'].'</td>'; 
-                                        echo'<td>'.$linha['pontuacao_usuario'].'</td>';
-                                        echo '</tr>'; 
-                                    } else if ($contador == 2) {
-                                        echo '<tr scope="row">'; 
-                                        echo '<td>'.$contador++.'º <i class="fas fa-medal"></i></td> '; 
-                                        echo '<td>'.$linha['nome_usuario'].'</td>'; 
-                                        echo'<td>'.$linha['pontuacao_usuario'].'</td>';
-                                        echo '</tr>'; 
-                                    } else {
-                                        echo '<tr scope="row">'; 
-                                        echo '<td>'.$contador++.'º</td> '; 
-                                        echo '<td>'.$linha['nome_usuario'].'</td>'; 
-                                        echo'<td>'.$linha['pontuacao_usuario'].'</td>';
-                                        echo '</tr>'; 
-                                    }
-                                    
+                                    echo '<tr scope="row">'; 
+                                    echo '<td>'.$contador++.'</td> '; 
+                                    echo '<td>'.$linha['nome_usuario'].'</td>'; 
+                                    echo'<td>'.$linha['pontuacao_usuario'].'</td>';
+                                    echo '</tr>'; 
                                 }
                             }                              
                             echo ' 

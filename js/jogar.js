@@ -1,11 +1,5 @@
 $(document).ready(function() {
     
-    //console.log("valor do background: "+$("#elementoHidrogenio").css("background-color"));
-
-    console.log("carreguei a pagina dnv");
-    
-    $("#elementoHidrogenio").css("background-color", "red");
-
     $.ajax({
         url: 'buscaSessionJaRespondidas.php',
         type: 'GET',
@@ -17,19 +11,16 @@ $(document).ready(function() {
             if(typeof data.error === 'undefined')
             {
                 // Sucesso
-
                 for (const key of Object.keys(data)) {
-                    //console.log("iterando na key: "+data[key]);
-                    $("#elemento"+data[key]).css("background-color", "green");
+
+                    $("#elemento"+data[key]).css("background-color", "rgba(44, 204, 0, 0.7)");
                 }
 
             }
             else
             {
                 // Tratar erros
-
                 alert(data.error);
-                //console.log("retornou erro: "+data.error);
             }
         },
         error: function(jqXHR, textStatus, errorThrown)
