@@ -169,7 +169,8 @@
                         </div>
 
                         <div class="col-12 col-md-2">
-                            <button type="button" class="btn btn-primary btn-block" id="dica">Pedir nova dica</button>
+							<button type="button" class="btn btn-primary btn-block" id="dica" data-toggle="modal" data-target="#rateModal">Pedir nova dica</button>
+							
                         </div>
 
                         <div class="col-12 col-md-3">
@@ -183,10 +184,10 @@
 </div>
 
 
-	<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-	<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-	<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-	<!-- COMEÇO DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+	<!-- MODAL TABELA PERIÓDICA -->
+	<!-- MODAL TABELA PERIÓDICA -->
+	<!-- MODAL TABELA PERIÓDICA -->
+	<!-- MODAL TABELA PERIÓDICA -->
 
 
 	<div class="modal fade centered-modal" id="exampleModal" role="dialog" aria-hidden="true">
@@ -199,6 +200,16 @@
 					</button>
 				</div>
 				<div class="modal-body">
+
+					
+					<div class="col-10 col-md-10">
+					Taxa de progresso:
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20/103 elementos</div>
+						</div>
+					</div>	
+					
+					<BR><BR>
 					<?php
 						include("tabelaPeriodica.html");
 					?>
@@ -210,10 +221,44 @@
 		</div>
 	</div>
 
-	<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-	<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-	<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
-	<!-- FIM DA INSERÇÃO DE CAMPOS DENTRO DO MODAL -->
+	<!-- FIM MODAL TABELA PERIÓDICA -->
+	<!-- FIM MODAL TABELA PERIÓDICA -->
+	<!-- FIM MODAL TABELA PERIÓDICA -->
+	<!-- FIM MODAL TABELA PERIÓDICA -->
+
+	<!-- MODAL RATE -->
+	<!-- MODAL RATE -->
+	<!-- MODAL RATE -->
+
+
+	<div class="modal fade centered-modal" id="rateModal" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="rateModalLabel">Sua pontuação</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<?php
+						//include("rater/index.html");
+					?>
+					<br><br><br><br>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- FIM MODAL RATE -->
+	<!-- FIM MODAL RATE -->
+	<!-- FIM MODAL RATE -->
+
+
+
 
 <?php
 	include(FOOTER_TEMPLATE); // Inclui o rodapé da página
