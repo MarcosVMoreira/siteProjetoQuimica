@@ -40,15 +40,17 @@
                         // Adiciona o arquivo css de acordo
                         if($pagina == "index"){
                             echo '<li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                             </li>'.
                             ' <li class="nav-item">
                             <a class="nav-link" href="jogar.php">Jogar</a>
-                            </li>'.
-                            '<li class="nav-item">
-                            <a class="nav-link" href="cadastrar.php">Cadastrar pergunta</a>
-                            </li>'.
-                            ' <li class="nav-item">
+                            </li>';
+                            if(isset($_SESSION['perfil_usuario']) && $_SESSION['perfil_usuario'] == "Professor"){
+                            echo '<li class="nav-item">
+                                <a class="nav-link" href="cadastrar.php">Cadastrar pergunta</a>
+                            </li>';
+                            }
+                            echo '<li class="nav-item">
                             <a class="nav-link" href="rank.php">Rank</a>
                             </li>';
                         }else if($pagina == "jogar"){
@@ -57,11 +59,13 @@
                             </li>'.
                             ' <li class="nav-item active">
                             <a class="nav-link" href="#">Jogar <span class="sr-only">(current)</span></a>
-                            </li>'.
-                            '<li class="nav-item">
-                            <a class="nav-link" href="cadastrar.php">Cadastrar pergunta</a>
-                            </li>'.
-                            ' <li class="nav-item">
+                            </li>';
+                            if(isset($_SESSION['perfil_usuario']) && $_SESSION['perfil_usuario'] == "Professor"){
+                                echo '<li class="nav-item">
+                                    <a class="nav-link" href="cadastrar.php">Cadastrar pergunta</a>
+                                </li>';
+                            }
+                            echo ' <li class="nav-item">
                             <a class="nav-link" href="rank.php">Rank</a>
                             </li>';
                         } else if ($pagina == "cadastrar") {
@@ -70,11 +74,13 @@
                             </li>'.
                             ' <li class="nav-item">
                             <a class="nav-link" href="jogar.php">Jogar </a>
-                            </li>'.
-                            '<li class="nav-item active">
-                            <a class="nav-link" href="#">Cadastrar pergunta<span class="sr-only">(current)</span></a>
-                            </li>'.
-                            ' <li class="nav-item">
+                            </li>';
+                            if(isset($_SESSION['perfil_usuario']) && $_SESSION['perfil_usuario'] == "Professor"){
+                                echo '<li class="nav-item">
+                                    <a class="nav-link" href="cadastrar.php">Cadastrar pergunta</a>
+                                </li>';
+                            }
+                            echo' <li class="nav-item">
                             <a class="nav-link" href="rank.php">Rank</a>
                             </li>';
                         } else if ($pagina == "criarConta") {
@@ -83,11 +89,13 @@
                             </li>'.
                             ' <li class="nav-item">
                             <a class="nav-link" href="jogar.php">Jogar </a>
-                            </li>'.
-                            '<li class="nav-item">
-                            <a class="nav-link" href="cadastrar.php">Cadastrar pergunta<span class="sr-only">(current)</span></a>
-                            </li>'.
-                            ' <li class="nav-item">
+                            </li>';
+                            if(isset($_SESSION['perfil_usuario']) && $_SESSION['perfil_usuario'] == "Professor"){
+                                echo '<li class="nav-item">
+                                    <a class="nav-link" href="cadastrar.php">Cadastrar pergunta</a>
+                                </li>';
+                            }
+                            echo ' <li class="nav-item">
                             <a class="nav-link" href="rank.php">Rank</a>
                             </li>';
                         } else if ($pagina == "rank") {
@@ -96,11 +104,13 @@
                             </li>'.
                             ' <li class="nav-item">
                             <a class="nav-link" href="jogar.php">Jogar </a>
-                            </li>'.
-                            '<li class="nav-item">
-                            <a class="nav-link" href="cadastrar.php">Cadastrar pergunta</a>
-                            </li>'.
-                            ' <li class="nav-item active">
+                            </li>';
+                            if(isset($_SESSION['perfil_usuario']) && $_SESSION['perfil_usuario'] == "Professor"){
+                                echo '<li class="nav-item">
+                                    <a class="nav-link" href="cadastrar.php">Cadastrar pergunta</a>
+                                </li>';
+                            }
+                            echo ' <li class="nav-item active">
                             <a class="nav-link" href="rank.php">Rank<span class="sr-only">(current)</span></a>
                             </li>';
                         }

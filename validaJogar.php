@@ -23,9 +23,8 @@
 
         echo $resposta;
 
-            if (!$conexao->query($query) === TRUE) {
-                echo "Error: " . $query . "<br>" . $conexao->error;
-            }
+        if (!$conexao->query($query) === TRUE) {
+            echo "Error: " . $query . "<br>" . $conexao->error;
         }
 
         header("Location: cadastrar.php");     

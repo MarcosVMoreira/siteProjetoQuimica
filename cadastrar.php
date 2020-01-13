@@ -21,6 +21,16 @@
 </div>
 
 <?php
+	} else if($_SESSION['perfil_usuario'] != "Professor") {
+?>
+<div class="container" id="padding-top-30">
+	<div class="panel panel-default" id="painel-cadastro">
+		<form action="validaCadastrar.php" method="POST" id="registration-form" class="form-horizontal" onsubmit="">
+			<h3>Desculpe :( Somente professores podem cadastrar novas perguntas</h3>
+		</form>
+	</div>
+</div>
+<?php
 	} else {
 
 ?>
