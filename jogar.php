@@ -261,7 +261,7 @@
 
 
 <?php
-	include(FOOTER_TEMPLATE); // Inclui o rodapé da página
 }
+	include(FOOTER_TEMPLATE); // Inclui o rodapé da página
 ?>
 
