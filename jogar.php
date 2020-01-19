@@ -205,7 +205,7 @@
 					<div class="col-10 col-md-10">
 					Taxa de progresso:
 						<div class="progress">
-							<div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20/103 elementos</div>
+							<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20/103 elementos</div>
 						</div>
 					</div>	
 					

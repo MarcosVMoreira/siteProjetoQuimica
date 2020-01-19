@@ -52,7 +52,6 @@ function verificaResposta(form) {
     });   
 
     if (campoElemento == elemento) {
-        
         $.ajax({
             url: 'adicionaPontuacao.php?idUsuario='+idUsuario,
             type: 'GET',
@@ -80,9 +79,7 @@ function verificaResposta(form) {
                 console.log('ERRORS: ' + errorThrown);
             }
         });   
-        
-        
-
+        insertTabelaPeriodica(idUsuario, elemento);
         alert("Resposta certa. (melhorar esta mensagem)");
         //location.href="jogar.php";
         return true;
