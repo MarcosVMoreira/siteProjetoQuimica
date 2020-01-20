@@ -80,11 +80,12 @@ function verificaResposta(form) {
             }
         });   
         insertTabelaPeriodica(idUsuario, elemento);
-        alert("Resposta certa. (melhorar esta mensagem)");
+        window.localStorage.setItem('mostrarModal', 'true')
+        //alert("Resposta certa. (melhorar esta mensagem)");
         //location.href="jogar.php";
         return true;
     } else {
-        alert("Resposta errada. (melhorar esta mensagem)");
+        alert("Resposta errada :(");
         form.elemento.focus();
         //location.href="jogar.php";
         return false;
@@ -263,13 +264,37 @@ $( function() {
         "Oganessônio"
     ];
     $( "#elemento" ).autocomplete({
-    source: elemento
+        source: elemento
     });
+});
 
-} );
+function mostrarEstrelas(pontuacao){
+    for(let i = 1; i <= Math.floor(pontuacao); i++){
+        $("#star" + i.toString()).css('display', 'inline');
+    }
+    for(let i = Math.floor(pontuacao) + 1; i <= 5; i++){
+        $("#star" + i.toString()).css('display', 'none');
+    }
+    if(Math.floor(pontuacao) != pontuacao){
+        $("#star" + (Math.floor(pontuacao) + 1).toString()).css('display', 'inline');
+        $("#star" + (Math.floor(pontuacao) + 1).toString()).attr("src", "img/star_half.png");
+    }
+    if(pontuacao == 0){
+        $("#bodyStars").html("Sem estrelinhas :(");
+    }
+    window.localStorage.setItem('pontuacao', '0');
+}
 
 $(document).ready(function() {
-    var qtdDicas = 0;
+    let qtdDicas = 0;
+    
+    if(window.localStorage.getItem('mostrarModal') == 'true'){
+        let pontuacao = parseFloat(window.localStorage.getItem('dicas'));
+        pontuacao = 5 - (pontuacao * 0.5);
+        mostrarEstrelas(pontuacao);
+        $('#rateModal').modal('show');
+        window.localStorage.setItem('mostrarModal', 'false');
+    }
 
     $("#dica").click(function() {
 
@@ -278,6 +303,7 @@ $(document).ready(function() {
         && typeof dica7 != 'undefined' && typeof dica8 != 'undefined' && typeof dica9 != 'undefined') {
             if(qtdDicas < 10) {
                 qtdDicas++;
+                window.localStorage.setItem('dicas', (qtdDicas - 1).toString());
                 switch(qtdDicas) {
                     case 1:
                         var dica = $("<li class=\"list-group-item\">"+dica1+"</li>");
@@ -310,11 +336,11 @@ $(document).ready(function() {
                         var dica = $("<li class=\"list-group-item\">"+dica10+"</li>");
                         break;
                   } 
-    
                 $("#listaDicas").append(dica);
             } 
         } else {
             $("#listaDicas").append("Todas as perguntas disponíveis já foram respondidas.");
+            window.localStorage.removeItem('primeiraPergunta');
             $("#elemento").prop("disabled", true);
             $("#btnResponder").prop("disabled", true);
             $("#dica").prop("disabled", true);

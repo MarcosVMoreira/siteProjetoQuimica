@@ -169,7 +169,7 @@
                         </div>
 
                         <div class="col-12 col-md-2">
-							<button type="button" class="btn btn-primary btn-block" id="dica" data-toggle="modal" data-target="#rateModal">Pedir nova dica</button>
+							<button type="button" class="btn btn-primary btn-block" id="dica">Pedir nova dica</button>
 							
                         </div>
 
@@ -183,12 +183,10 @@
 	</div>
 </div>
 
-
 	<!-- MODAL TABELA PERIÓDICA -->
 	<!-- MODAL TABELA PERIÓDICA -->
 	<!-- MODAL TABELA PERIÓDICA -->
 	<!-- MODAL TABELA PERIÓDICA -->
-
 
 	<div class="modal fade centered-modal" id="exampleModal" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
@@ -200,8 +198,6 @@
 					</button>
 				</div>
 				<div class="modal-body">
-
-					
 					<div class="col-10 col-md-10">
 					Taxa de progresso:
 						<div class="progress">
@@ -230,21 +226,21 @@
 	<!-- MODAL RATE -->
 	<!-- MODAL RATE -->
 
-
 	<div class="modal fade centered-modal" id="rateModal" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="rateModalLabel">Sua pontuação</h5>
+					<h5 class="modal-title" id="rateModalLabel">Resposta Certa!</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
-					<?php
-						//include("rater/index.html");
-					?>
-					<br><br><br><br>
+				<div class="modal-body" id="bodyStars">
+					<img src="img/star_full.png" class="img-fluid star-modal" id="star1">
+					<img src="img/star_full.png" class="img-fluid star-modal" id="star2">
+					<img src="img/star_full.png" class="img-fluid star-modal" id="star3">
+					<img src="img/star_full.png" class="img-fluid star-modal" id="star4">
+					<img src="img/star_full.png" class="img-fluid star-modal" id="star5">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
