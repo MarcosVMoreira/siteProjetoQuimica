@@ -65,4 +65,17 @@ body {
 
 .modal-body{
     margin: 0 auto;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .responderBotao, .dicaBotao, .tabelaPeriodicaBotao{
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .modal-content{
+        width: 120%;
+    }
 }

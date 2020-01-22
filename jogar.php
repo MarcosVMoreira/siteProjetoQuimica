@@ -161,19 +161,19 @@
                     </div>
 
                     <div class="row align-items-center">
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-6 responderBotao">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="elemento" id="elemento" placeholder="Insira o elemento resposta" required autofocus/>
                                 <button type="submit" id="btnResponder" class="btn btn-success">Responder</button>
                             </div>
                         </div>
 
-                        <div class="col-12 col-md-2">
+                        <div class="col-12 col-md-2 dicaBotao">
 							<button type="button" class="btn btn-primary btn-block" id="dica">Pedir nova dica</button>
 							
                         </div>
 
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-md-3 tabelaPeriodicaBotao">
                             <button type="button" id="btnConsultar" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Consultar tabela periódica</button>
                         </div>
 				    </div>
@@ -201,7 +201,7 @@
 					<div class="col-10 col-md-10">
 					Taxa de progresso:
 						<div class="progress">
-							<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20/103 elementos</div>
+							<div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20/103 elementos</div>
 						</div>
 					</div>	
 					
