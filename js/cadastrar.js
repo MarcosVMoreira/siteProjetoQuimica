@@ -23,13 +23,13 @@ function prepareUpload(event)
     }
 
     reader.onload = function() {
-        let linhas = reader.result.split("\n");
-        linhas = linhas.filter(function(linha){
-            return linha != "";
-          });
+        let linhas = reader.result.replace(" ", "");
+        linhas = linhas.split("\n");
+        linhas = linhas.filter(Boolean)
 
         if(linhas.length != 12){
             alert("Arquivo não está no formato correto! Atualmente contém apenas " + linhas.length + " linhas (Deve ter 12)");
+            return;
         }
 
         $("#dica1").val(linhas[0]);
@@ -45,7 +45,6 @@ function prepareUpload(event)
         $("#elemento").val(linhas[10]);
 
         let referencias = linhas[11].split("#");
-        console.log(referencias)
 
         $('#referencia').val(referencias[0]);
 
