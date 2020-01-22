@@ -90,8 +90,30 @@ function verificaResposta(form) {
         //location.href="jogar.php";
         return false;
     }
+}
 
-    
+function apagarCadastro(){
+    let grupo = $("#grupoPerguntas").val();
+
+    if (window.confirm("Deseja realmente excluir?")) { 
+        $.ajax({
+            url: 'excluirPergunta.php?grupo='+grupo,
+            type: 'GET',
+            processData: false, 
+            contentType: false,
+            success: function(data, textStatus, jqXHR)
+            {
+                alert("Pergunta excluída com sucesso!");
+                $("#linhaTabela" + grupo).remove();
+            },
+            error: function(jqXHR, textStatus, errorThrown)
+            {
+                // Tratar erros
+                alert("Falha ao excluir pergunta!");
+                console.log('ERRORS: ' + textStatus);
+            }
+        });
+    }
 }
 
 function populaModalperguntas (grupo) {
@@ -109,6 +131,7 @@ function populaModalperguntas (grupo) {
                 console.log("data "+data);
                 console.log("dica1 "+data.dica1);
 
+                $("#grupoPerguntas").val(data.grupo);
                 $("#dica1Modal").val(data.dica1);
                 $("#dica2Modal").val(data.dica2);
                 $("#dica3Modal").val(data.dica3);
@@ -368,7 +391,7 @@ $(document).ready(function () {
             "<div class=\"col-sm-12 col-md-6\">" +
             "<div class=\"form-group\">" +
             "<div class=\"input-group\">" +
-            "<input type=\"text\" class=\"form-control\" name=\"referencia" + qtdReferencias + "\" id=\"id=\"referencia" + qtdReferencias + "\" placeholder=\"Insira a " + (qtdReferencias+2) + "º referência \" required>" +
+            "<input type=\"text\" class=\"form-control\" name=\"referencia" + qtdReferencias + "\" id=\"referencia" + qtdReferencias + "\" placeholder=\"Insira a " + (qtdReferencias+2) + "º referência \" required>" +
             "</div>" +
             "</div>" +
             "</div>");

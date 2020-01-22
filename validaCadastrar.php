@@ -36,9 +36,8 @@
         $resposta = $_POST['elemento'];
 
         echo $resposta;
-
         
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 11; $i++) {
             switch ($i) {
                 case 0:
                     $query = "INSERT INTO perguntas(dica_perguntas, resposta_perguntas, grupo_perguntas) 
@@ -80,11 +79,29 @@
                     $query = "INSERT INTO perguntas(dica_perguntas, resposta_perguntas, grupo_perguntas) 
                     VALUES ('$dica10', '$resposta', '$ultimoGrupo')";
                     break;
+                case 10:
+                    $referencia1 = $_POST["referencia"];
+                    $query = "INSERT INTO referencias_perguntas(grupo_perguntas, referencia) 
+                    VALUES ('$ultimoGrupo', '$referencia1')";
+                    break;
             }
 
             if (!$conexao->query($query) === TRUE) {
                 echo "Error: " . $query . "<br>" . $conexao->error;
             }
+        }
+
+        $contadorReferencias = 0;
+        while(isset($_POST['referencia' . strval($contadorReferencias)])){
+            $referenciaAtual = $_POST['referencia' . strval($contadorReferencias)];
+            $query = "INSERT INTO referencias_perguntas(grupo_perguntas, referencia) 
+            VALUES ('$ultimoGrupo', '$referenciaAtual')";
+
+            if (!$conexao->query($query) === TRUE) {
+                echo "Error: " . $query . "<br>" . $conexao->error;
+            }
+
+            $contadorReferencias++;
         }
 
         header("Location: cadastrar.php");     

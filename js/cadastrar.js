@@ -9,56 +9,53 @@ $('#selecao-arquivo').on('change', prepareUpload);
 
 function prepareUpload(event)
 {
-    files = event.target.files;
-
     event.stopPropagation();
     event.preventDefault();
+    files = event.target.files;
+    let reader = new FileReader();
+    let split = files[0].name.split(".");
 
-    var data = new FormData();
-    $.each(files, function(key, value)
-    {
-        data.append(key, value);
-    });
+    reader.readAsText(files[0]);
 
-    $.ajax({
-        url: 'validaArquivo.php?files',
-        type: 'POST',
-        data: data,
-        dataType: 'json',
-        processData: false, 
-        contentType: false,
-        success: function(data, textStatus, jqXHR)
-        {
-            if(typeof data.error === 'undefined')
-            {
-                // Sucesso
-                $("#dica1").val(data.dica1);
-                $("#dica2").val(data.dica2);
-                $("#dica3").val(data.dica3);
-                $("#dica4").val(data.dica4);
-                $("#dica5").val(data.dica5);
-                $("#dica6").val(data.dica6);
-                $("#dica7").val(data.dica7);
-                $("#dica8").val(data.dica8);
-                $("#dica9").val(data.dica9);
-                $("#dica10").val(data.dica10);
-                $("#elemento").val(data.elemento);
+    if(split[split.length-1] != 'csv'){
+        alert("Houve um erro ao fazer upload de seus arquivos: utilize apenas arquivo com extensão .csv");
+        return;
+    }
 
-                //console.log("retornou sucesso: "+data);
-            }
-            else
-            {
-                // Tratar erros
+    reader.onload = function() {
+        let linhas = reader.result.split("\n");
+        linhas = linhas.filter(function(linha){
+            return linha != "";
+          });
 
-                alert(data.error);
-                //console.log("retornou erro: "+data.error);
-            }
-        },
-        error: function(jqXHR, textStatus, errorThrown)
-        {
-            // Tratar erros
-            console.log('ERRORS: ' + textStatus);
+        if(linhas.length != 12){
+            alert("Arquivo não está no formato correto! Atualmente contém apenas " + linhas.length + " linhas (Deve ter 12)");
         }
-    });
+
+        $("#dica1").val(linhas[0]);
+        $("#dica2").val(linhas[1]);
+        $("#dica3").val(linhas[2]);
+        $("#dica4").val(linhas[3]);
+        $("#dica5").val(linhas[4]);
+        $("#dica6").val(linhas[5]);
+        $("#dica7").val(linhas[6]);
+        $("#dica8").val(linhas[7]);
+        $("#dica9").val(linhas[8]);
+        $("#dica10").val(linhas[9]);
+        $("#elemento").val(linhas[10]);
+
+        let referencias = linhas[11].split("#");
+        console.log(referencias)
+
+        $('#referencia').val(referencias[0]);
+
+        if(referencias.length > 1){
+            for(let i = 1; i < referencias.length; i++){
+                $('#adicionaReferencia').trigger('click');
+                $('#referencia' + (i - 1).toString()).val(referencias[i]);
+            }
+        }
+    };
+        
     
 }

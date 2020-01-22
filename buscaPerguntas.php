@@ -49,10 +49,11 @@ if(isset($_GET['grupoParam']))
                         break;
                 }
                 $elemento = $resultado["resposta_perguntas"];
+                $grupo = $resultado["grupo_perguntas"];
         }
         
         $data = array_merge($data, array("dica1"=>$dica1, "dica2"=>$dica2, "dica3"=>$dica3, "dica4"=>$dica4, "dica5"=>$dica5, "dica6"=>$dica6, "dica7"=>$dica7, 
-        "dica8"=>$dica8, "dica9"=>$dica9, "dica10"=>$dica10, "elemento"=>$elemento));   
+        "dica8"=>$dica8, "dica9"=>$dica9, "dica10"=>$dica10, "elemento"=>$elemento, "grupo"=>$grupo));   
     }
 
    echo json_encode($data);

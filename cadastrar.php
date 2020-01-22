@@ -193,7 +193,7 @@
 						</thead> 
 					<tbody class="labeltexto">'; 
 					while ($linha = $result->fetch_assoc()) { 
-						echo '<tr scope="row">'; 
+						echo '<tr scope="row" id="linhaTabela' . $linha['grupo_perguntas'] . '">'; 
 						echo '<td>'.$linha['grupo_perguntas'].'</td> '; 
 						echo '<td>'.$linha['resposta_perguntas'].'</td>'; 
 						echo'<td><a href="" data-toggle="modal" data-target="#exampleModal" 
@@ -225,7 +225,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						
+						<input type="text" id="grupoPerguntas" style="display:none;">
 						<div class="row align-items-center">
 							<div class="col-sm-12 col-md-6">
 								<div class="form-group">
@@ -328,9 +328,8 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
-							<button type="button" class="btn btn-danger" data-dismiss="modal">Apagar cadastro</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="apagarCadastro();">Apagar cadastro</button>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-
 						</div>
 					</div>
 				</div>
