@@ -78,13 +78,15 @@ function verificaResposta(form) {
                 console.log('ERRORS: ' + jqXHR);
                 console.log('ERRORS: ' + errorThrown);
             }
-        });   
+        });
+        $("#correctSound")[0].play();
         insertTabelaPeriodica(idUsuario, elemento);
         window.localStorage.setItem('mostrarModal', 'true')
         //alert("Resposta certa. (melhorar esta mensagem)");
         //location.href="jogar.php";
         return true;
     } else {
+        $("#incorrectSound")[0].play();
         alert("Resposta errada :(");
         form.elemento.focus();
         //location.href="jogar.php";

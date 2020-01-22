@@ -177,7 +177,9 @@
                             <button type="button" id="btnConsultar" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Consultar tabela periódica</button>
                         </div>
 				    </div>
-			     </div>
+				 </div>
+				 <audio src="audio/correct.wav" style="display:none;" id="correctSound">
+				 <audio src="audio/incorrect.wav" style="display:none;" id="incorrectSound">
             </div>    
 		</form>
 	</div>
