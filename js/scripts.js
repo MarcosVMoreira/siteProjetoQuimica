@@ -79,7 +79,6 @@ function verificaResposta(form) {
                 console.log('ERRORS: ' + errorThrown);
             }
         });
-        $("#correctSound")[0].play();
         insertTabelaPeriodica(idUsuario, elemento);
         window.localStorage.setItem('mostrarModal', 'true')
         //alert("Resposta certa. (melhorar esta mensagem)");
@@ -294,6 +293,7 @@ $( function() {
 });
 
 function mostrarEstrelas(pontuacao){
+    $("#correctSound")[0].play();
     for(let i = 1; i <= Math.floor(pontuacao); i++){
         $("#star" + i.toString()).css('display', 'inline');
     }

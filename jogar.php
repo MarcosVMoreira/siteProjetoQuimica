@@ -41,7 +41,7 @@
 
 		while ($encontrado == 0) {
 
-			$aleatorio = rand(0, $max);
+			$aleatorio = rand(1, $max);
 	
 			$perguntaJaRespondida = false;
 	

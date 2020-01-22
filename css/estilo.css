@@ -63,9 +63,8 @@ body {
     padding-right: 20px;
 }
 
-.modal-body{
+#bodyStars{
     margin: 0 auto;
-    width: 100%;
 }
 
 @media (max-width: 768px) {
