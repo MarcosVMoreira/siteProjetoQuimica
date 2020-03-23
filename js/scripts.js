@@ -129,7 +129,7 @@ function populaModalperguntas (grupo) {
             if(typeof data.error === 'undefined')
             {
                 // Sucesso
-                console.log("data "+data);
+                console.log("ModalData: "+data.referencia);
                 console.log("dica1 "+data.dica1);
 
                 $("#grupoPerguntas").val(data.grupo);
@@ -144,8 +144,8 @@ function populaModalperguntas (grupo) {
                 $("#dica9Modal").val(data.dica9);
                 $("#dica10Modal").val(data.dica10);
                 $("#elementoModal").val(data.elemento);
+                $("#referenciaModal").val(data.referencia);
 
-                //console.log("retornou sucesso: "+data);
             }
             else
             {

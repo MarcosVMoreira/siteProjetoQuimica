@@ -10,7 +10,10 @@ if(isset($_GET['grupoParam']))
     $data = array();
 
     $query = "SELECT * FROM perguntas WHERE grupo_perguntas = ".$_GET['grupoParam']."";
-    if ($result = $conexao->query($query)) {
+    $queryReferencias = "SELECT * FROM referencias_perguntas WHERE grupo_perguntas = ".$_GET['grupoParam']."";
+
+
+    if ($result = $conexao->query($query) /*&& $result2 = $conexao->query($queryReferencias)*/) {
 
         $i = 0;
 
@@ -50,10 +53,18 @@ if(isset($_GET['grupoParam']))
                 }
                 $elemento = $resultado["resposta_perguntas"];
                 $grupo = $resultado["grupo_perguntas"];
+        }   
+
+        
+        if ($result2 = $conexao->query($queryReferencias)) {
+            $referencia = "";
+            while ($resultado2 = $result2->fetch_assoc()) {
+                $referencia =$resultado2["referencia"]."#".$referencia;
+            }
         }
         
         $data = array_merge($data, array("dica1"=>$dica1, "dica2"=>$dica2, "dica3"=>$dica3, "dica4"=>$dica4, "dica5"=>$dica5, "dica6"=>$dica6, "dica7"=>$dica7, 
-        "dica8"=>$dica8, "dica9"=>$dica9, "dica10"=>$dica10, "elemento"=>$elemento, "grupo"=>$grupo));   
+    "dica8"=>$dica8, "dica9"=>$dica9, "dica10"=>$dica10, "elemento"=>$elemento, "grupo"=>$grupo, "referencia"=>$referencia));   
     }
 
    echo json_encode($data);

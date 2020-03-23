@@ -3,6 +3,7 @@
 
     unset($_SESSION['login_usuario'],
     $_SESSION['perfil_usuario'],
+    $_SESSION['id_usuario'],
     $_SESSION['jaRespondidas']);
 
     $loginLembrete = (isset($_COOKIE['CookieLogin'])) ? base64_decode($_COOKIE['CookieLogin']) : '';
