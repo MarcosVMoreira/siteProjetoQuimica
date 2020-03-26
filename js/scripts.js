@@ -21,7 +21,7 @@ function verificaResposta(form) {
         
     var campoElemento = form.elemento.value;
 
-   //console.log("adicionando o grupoElemento "+grupoElemento);
+   ////console.log("adicionando o grupoElemento "+grupoElemento);
 
     $.ajax({
         url: 'preencheSessionJaRespondidas.php?valor='+grupoElemento,
@@ -33,21 +33,21 @@ function verificaResposta(form) {
             if(typeof data.error === 'undefined')
             {
                 // Sucesso
-                console.log("Adicionado a session jaRespondidas "+idUsuario);
+                //console.log("Adicionado a session jaRespondidas "+idUsuario);
             }
             else
             {
                 // Tratar erros
 
-                console.log("Erro ao adicionar a session jaRespondidas: "+data.error);
+                //console.log("Erro ao adicionar a session jaRespondidas: "+data.error);
             }
         },
         error: function(jqXHR, textStatus, errorThrown)
         {
             // Tratar erros
-            console.log('ERRORS: ' + textStatus);
-            console.log('ERRORS: ' + jqXHR);
-            console.log('ERRORS: ' + errorThrown);
+            //console.log('ERRORS: ' + textStatus);
+            //console.log('ERRORS: ' + jqXHR);
+            //console.log('ERRORS: ' + errorThrown);
         }
     });   
 
@@ -62,7 +62,7 @@ function verificaResposta(form) {
                 if(typeof data.error === 'undefined')
                 {
                     // Sucesso
-                    console.log("Adicionado um ponto ao usuario "+idUsuario);
+                    //console.log("Adicionado um ponto ao usuario "+idUsuario);
                 }
                 else
                 {
@@ -74,9 +74,9 @@ function verificaResposta(form) {
             error: function(jqXHR, textStatus, errorThrown)
             {
                 // Tratar erros
-                console.log('ERRORS: ' + textStatus);
-                console.log('ERRORS: ' + jqXHR);
-                console.log('ERRORS: ' + errorThrown);
+                //console.log('ERRORS: ' + textStatus);
+                //console.log('ERRORS: ' + jqXHR);
+                //console.log('ERRORS: ' + errorThrown);
             }
         });
         insertTabelaPeriodica(idUsuario, elemento);
@@ -111,10 +111,57 @@ function apagarCadastro(){
             {
                 // Tratar erros
                 alert("Falha ao excluir pergunta!");
-                console.log('ERRORS: ' + textStatus);
+                //console.log('ERRORS: ' + textStatus);
             }
         });
     }
+}
+
+function salvaAlteracoesModal (form) {
+
+    var texto = $("#referenciaModal").val().replace(/#/g, "%23");
+
+    $.ajax({
+        url: 'updateModalCadastrar.php?dica1Modal='+$("#dica1Modal").val()+'&dica2Modal='+$("#dica2Modal").val()+'&dica3Modal='+$("#dica3Modal").val()+'&'
+        +'dica4Modal='+$("#dica4Modal").val()+'&dica5Modal='+$("#dica5Modal").val()+'&dica6Modal='+$("#dica6Modal").val()+'&dica7Modal='+$("#dica7Modal").val()+
+        '&dica8Modal='+$("#dica8Modal").val()+'&dica9Modal='+$("#dica9Modal").val()+'&'+
+        'dica10Modal='+$("#dica10Modal").val()+'&elementoModal='+$("#elementoModal").val()+'&grupoPerguntas='+$("#grupoPerguntas").val()+'&referenciaModal='
+        +texto,
+        type: 'GET',
+        dataType: 'json',
+        processData: false, 
+        contentType: false,
+        success: function(data, textStatus, jqXHR)
+        {
+            if(typeof data.error === 'undefined')
+            {
+
+                $("#grupoPerguntas").val(data.grupo);
+                $("#dica1Modal").val(data.dica1);
+                $("#dica2Modal").val(data.dica2);
+                $("#dica3Modal").val(data.dica3);
+                $("#dica4Modal").val(data.dica4);
+                $("#dica5Modal").val(data.dica5);
+                $("#dica6Modal").val(data.dica6);
+                $("#dica7Modal").val(data.dica7);
+                $("#dica8Modal").val(data.dica8);
+                $("#dica9Modal").val(data.dica9);
+                $("#dica10Modal").val(data.dica10);
+                $("#elementoModal").val(data.elemento);
+                $("#referenciaModal").val(data.referenciaModal);
+            }
+            else
+            {
+                alert(data.error);
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown)
+        {
+            // Tratar erros
+            //console.log('ERRORS: ' + textStatus);
+        }
+    });
+
 }
 
 function populaModalperguntas (grupo) {
@@ -129,8 +176,8 @@ function populaModalperguntas (grupo) {
             if(typeof data.error === 'undefined')
             {
                 // Sucesso
-                console.log("ModalData: "+data.referencia);
-                console.log("dica1 "+data.dica1);
+                //console.log("ModalData: "+data.referencia);
+                //console.log("dica1 "+data.dica1);
 
                 $("#grupoPerguntas").val(data.grupo);
                 $("#dica1Modal").val(data.dica1);
@@ -152,17 +199,20 @@ function populaModalperguntas (grupo) {
                 // Tratar erros
 
                 alert(data.error);
-                //console.log("retornou erro: "+data.error);
+                ////console.log("retornou erro: "+data.error);
             }
         },
         error: function(jqXHR, textStatus, errorThrown)
         {
             // Tratar erros
-            console.log('ERRORS: ' + textStatus);
+            //console.log('ERRORS: ' + textStatus);
         }
     });
 
 }
+
+
+
 
 //jQuery
 

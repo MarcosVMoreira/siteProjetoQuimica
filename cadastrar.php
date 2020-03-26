@@ -327,7 +327,7 @@
 							
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+							<button type="button" class="btn btn-success" data-dismiss="modal" onclick="salvaAlteracoesModal(this);">Salvar</button>
 							<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="apagarCadastro();">Apagar cadastro</button>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 						</div>
